@@ -1,0 +1,495 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bespoke Online Reservations | Chandan Salon Mayfair</title>
+  
+  <meta name="description" content="Reserve your styling appointment, straight shave, or facial skincare therapy. Five-step interactive booking wizard for Chandan Salon Mayfair.">
+  <link rel="canonical" href="https://www.chandansalon.com/booking.html" />
+  
+  <!-- CSS Stylesheet -->
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+
+
+  <!-- Ambient Spotlights -->
+  <div class="ambient-glow"></div>
+
+  <!-- Sticky Luxury Header -->
+  <header class="luxury-header">
+    <div class="max-width-container">
+      <nav class="glass">
+        <!-- Logo -->
+        <a href="index.html" class="nav-brand">CHANDAN<span>.</span></a>
+
+        <!-- Links -->
+        <ul class="nav-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="services.html">Services</a></li>
+          <li><a href="specialists.html">Specialists</a></li>
+          <li><a href="gallery.html">Gallery</a></li>
+          <li><a href="booking.html" class="active">Booking</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+
+        <!-- Actions -->
+        <div class="nav-actions">
+          <button class="theme-toggle-btn" aria-label="Toggle Theme">
+            <svg class="sun-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 9H3m15.364-6.364l-.707.707M6.343 17.657l-.707.707m12.728 0l-.707-.707M6.343 6.343l-.707-.707M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path>
+            </svg>
+            <svg class="moon-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"></path>
+            </svg>
+          </button>
+          <a href="booking.html" class="btn-luxury btn-primary hidden lg:inline-block">Book Experience</a>
+          
+          <button class="mobile-menu-btn" aria-label="Toggle Menu">
+            <span></span>
+            <span></span>
+            <span></span>
+          </button>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Mobile Overlay Navigation -->
+  <div class="mobile-menu-overlay">
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="services.html">Services</a></li>
+      <li><a href="specialists.html">Specialists</a></li>
+      <li><a href="gallery.html">Gallery</a></li>
+      <li><a href="booking.html" class="active">Booking</a></li>
+      <li><a href="contact.html">Contact</a></li>
+      <li><a href="booking.html" class="btn-luxury btn-primary">Book Experience</a></li>
+    </ul>
+  </div>
+
+  <!-- Secondary Hero Header -->
+  <section class="hero-section" style="height: 60vh; min-height: 450px;">
+    <div class="hero-bg-layer" style="background-image: url('https://images.unsplash.com/photo-1605497746444-ac9dbd324ce4?auto=format&fit=crop&w=1920&q=80');"></div>
+    <div class="hero-overlay"></div>
+    
+    <div class="max-width-container flex-center" style="height: 100%; text-align: center; flex-direction: column;">
+      <span class="font-display" style="font-size: 0.65rem; text-transform: uppercase; letter-spacing: 0.25em; color: var(--accent-gold); font-weight: 700; margin-bottom: 1.5rem; display: block; position: relative; z-index: 10;">Reservations</span>
+      <h1 class="hero-title" style="font-size: clamp(2.2rem, 5vw, 4rem); position: relative; z-index: 10; margin-bottom: 0;">Bespoke Booking <span>Wizard</span></h1>
+      <div class="scroll-indicator" style="bottom: 1.5rem;">
+        <div class="scroll-indicator-bar"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Booking Wizard Panel -->
+  <section class="section-padding" style="position: relative; z-index: 10;">
+    <div class="max-width-container">
+      
+      <div class="booking-wizard-wrapper glass" id="booking-wizard">
+        
+        <!-- Wizard Header -->
+        <div class="wizard-header">
+          <div>
+            <h2>Reservation Coordinator</h2>
+            <p class="font-display">Configure your atelier visit step-by-step</p>
+          </div>
+          <!-- Progress nodes -->
+          <div class="wizard-progress">
+            <div class="wizard-step-node flex-center active">1</div>
+            <div class="wizard-progress-bar"></div>
+            <div class="wizard-step-node flex-center">2</div>
+            <div class="wizard-progress-bar"></div>
+            <div class="wizard-step-node flex-center">3</div>
+            <div class="wizard-progress-bar"></div>
+            <div class="wizard-step-node flex-center">4</div>
+          </div>
+        </div>
+
+        <form id="booking-wizard-form" class="wizard-body">
+          
+          <!-- STEP 1: Select Service Category -->
+          <div class="wizard-step-panel active">
+            <span class="step-title font-display">Step 1 / Select Curated Service</span>
+            <div class="booking-grid-items">
+              
+              <button type="button" class="booking-item-card" data-service="Executive Haircut" data-price="$85">
+                <span class="category font-display">Scissors Standard</span>
+                <div>
+                  <h4>Executive Haircut</h4>
+                  <p class="rate">$85</p>
+                </div>
+              </button>
+
+              <button type="button" class="booking-item-card" data-service="Hair Styling" data-price="$60">
+                <span class="category font-display">Atelier Finish</span>
+                <div>
+                  <h4>Hair Styling</h4>
+                  <p class="rate">$60</p>
+                </div>
+              </button>
+
+              <button type="button" class="booking-item-card" data-service="Hair Spa" data-price="$110">
+                <span class="category font-display">Follicular Spa</span>
+                <div>
+                  <h4>Hair Spa</h4>
+                  <p class="rate">$110</p>
+                </div>
+              </button>
+
+              <button type="button" class="booking-item-card" data-service="Balayage & Tint" data-price="$160">
+                <span class="category font-display">Color Restoration</span>
+                <div>
+                  <h4>Balayage & Tint</h4>
+                  <p class="rate">$160</p>
+                </div>
+              </button>
+
+              <button type="button" class="booking-item-card" data-service="Beard Styling" data-price="$50">
+                <span class="category font-display">Barber Outline</span>
+                <div>
+                  <h4>Beard Styling</h4>
+                  <p class="rate">$50</p>
+                </div>
+              </button>
+
+              <button type="button" class="booking-item-card" data-service="Hydra-Facial" data-price="$95">
+                <span class="category font-display">Botanical Skin</span>
+                <div>
+                  <h4>Hydra-Facial</h4>
+                  <p class="rate">$95</p>
+                </div>
+              </button>
+
+              <button type="button" class="booking-item-card" data-service="Bridal Makeup" data-price="$350">
+                <span class="category font-display">Special Suite</span>
+                <div>
+                  <h4>Bridal Makeup</h4>
+                  <p class="rate">$350</p>
+                </div>
+              </button>
+
+              <button type="button" class="booking-item-card" data-service="Groom Makeup" data-price="$180">
+                <span class="category font-display">Special Suite</span>
+                <div>
+                  <h4>Groom Makeup</h4>
+                  <p class="rate">$180</p>
+                </div>
+              </button>
+
+              <button type="button" class="booking-item-card" data-service="Keratin Treatment" data-price="$250">
+                <span class="category font-display">Vital Smooth</span>
+                <div>
+                  <h4>Keratin Treatment</h4>
+                  <p class="rate">$250</p>
+                </div>
+              </button>
+
+              <button type="button" class="booking-item-card" data-service="Smoothening" data-price="$220">
+                <span class="category font-display">Follicular Straight</span>
+                <div>
+                  <h4>Smoothening</h4>
+                  <p class="rate">$220</p>
+                </div>
+              </button>
+
+              <button type="button" class="booking-item-card" data-service="Aromatherapy Massage" data-price="$120">
+                <span class="category font-display">Tension Relief</span>
+                <div>
+                  <h4>Aromatherapy Massage</h4>
+                  <p class="rate">$120</p>
+                </div>
+              </button>
+
+              <button type="button" class="booking-item-card" data-service="Scalp Head Massage" data-price="$45">
+                <span class="category font-display">Scalp Soothe</span>
+                <div>
+                  <h4>Scalp Head Massage</h4>
+                  <p class="rate">$45</p>
+                </div>
+              </button>
+
+              <button type="button" class="booking-item-card" data-service="Junior Haircut" data-price="$40">
+                <span class="category font-display">Young Standard</span>
+                <div>
+                  <h4>Junior Haircut</h4>
+                  <p class="rate">$40</p>
+                </div>
+              </button>
+
+              <button type="button" class="booking-item-card" data-service="Grooming Master Package" data-price="$290" style="grid-column: span 2;">
+                <span class="category font-display">The Royal Ritual</span>
+                <div>
+                  <h4>Grooming Master Package</h4>
+                  <p class="rate">$290</p>
+                </div>
+              </button>
+
+            </div>
+          </div>
+
+          <!-- STEP 2: Select Master Stylist -->
+          <div class="wizard-step-panel">
+            <span class="step-title font-display">Step 2 / Select Master Stylist</span>
+            <div class="booking-grid-items">
+              
+              <button type="button" class="booking-stylist-card" data-stylist="Alexander Mercer">
+                <div class="avatar flex-center font-display">AM</div>
+                <div>
+                  <h4>Alexander Mercer</h4>
+                  <p class="font-display">Art Director</p>
+                </div>
+              </button>
+
+              <button type="button" class="booking-stylist-card" data-stylist="Sophia Loren">
+                <div class="avatar flex-center font-display">SL</div>
+                <div>
+                  <h4>Sophia Loren</h4>
+                  <p class="font-display">Aesthetics Specialist</p>
+                </div>
+              </button>
+
+              <button type="button" class="booking-stylist-card" data-stylist="Marcus Aurelius">
+                <div class="avatar flex-center font-display">MA</div>
+                <div>
+                  <h4>Marcus Aurelius</h4>
+                  <p class="font-display">Senior Groomer</p>
+                </div>
+              </button>
+
+            </div>
+          </div>
+
+          <!-- STEP 3: Choose Date & Time -->
+          <div class="wizard-step-panel">
+            <span class="step-title font-display">Step 3 / Select Date & Time</span>
+            <div class="booking-datetime-layout">
+              
+              <div class="datetime-grid-wrapper">
+                <h4 class="font-display">Available Dates</h4>
+                <div class="datetime-buttons-grid" id="booking-date-grid">
+                  <!-- Javascript populated dates -->
+                </div>
+              </div>
+
+              <div class="datetime-grid-wrapper">
+                <h4 class="font-display">Available Hours</h4>
+                <div class="datetime-buttons-grid" id="booking-time-grid">
+                  <!-- Javascript populated times -->
+                </div>
+              </div>
+
+            </div>
+          </div>
+
+          <!-- STEP 4: Confirm Details -->
+          <div class="wizard-step-panel">
+            <span class="step-title font-display">Step 4 / Client Credentials</span>
+            
+            <div class="luxury-form" style="margin-bottom: 2rem;">
+              <div class="form-group">
+                <label for="wizard-name">Full Name *</label>
+                <input required type="text" id="wizard-name" placeholder="John Doe">
+              </div>
+
+              <div class="form-group">
+                <label for="wizard-email">Email Address *</label>
+                <input required type="email" id="wizard-email" placeholder="john@example.com">
+              </div>
+
+              <div class="form-group">
+                <label for="wizard-phone">Phone Number *</label>
+                <input required type="tel" id="wizard-phone" placeholder="+44 7911 123456">
+              </div>
+
+              <div class="form-group">
+                <label for="wizard-notes">Special Instructions</label>
+                <input type="text" id="wizard-notes" placeholder="e.g. Prefer quiet suite, beverages preferences">
+              </div>
+            </div>
+
+            <!-- Booking Summary Card -->
+            <div class="booking-summary-box">
+              <h5 class="font-display">Reservation Summary</h5>
+              <div class="summary-rows font-display">
+                <div class="summary-row">
+                  <span class="label">Curated Service</span>
+                  <span class="val" id="summary-service">-</span>
+                </div>
+                <div class="summary-row">
+                  <span class="label">Assigned Stylist</span>
+                  <span class="val" id="summary-stylist">-</span>
+                </div>
+                <div class="summary-row">
+                  <span class="label">Date & Time</span>
+                  <span class="val" id="summary-datetime">-</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- STEP 5: Success Checkmark -->
+          <div class="wizard-step-panel" id="wizard-step-5">
+            <div class="booking-success-panel">
+              <div class="checkmark-circle-icon">
+                <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"></path>
+                </svg>
+              </div>
+              <h3>Reservation Secured</h3>
+              <p>
+                We have dispatched a private digital confirmation invite to your email. Your master stylist is scheduled.
+              </p>
+              <a href="index.html" class="btn-luxury btn-outline">Return to Homepage</a>
+            </div>
+          </div>
+
+          <!-- Wizard Footer Navigation Buttons -->
+          <div class="wizard-footer">
+            <button type="button" class="btn-luxury btn-outline" id="wizard-prev-btn" style="display: none;">Back</button>
+            <span style="flex: 1;"></span>
+            <button type="button" class="btn-luxury btn-primary" id="wizard-next-btn" disabled>Continue</button>
+            <button type="submit" class="btn-luxury btn-primary" id="wizard-submit-btn" style="display: none;" disabled>Confirm Booking</button>
+          </div>
+
+        </form>
+      </div>
+
+      <!-- Active Reservations Panel (Persistence display) -->
+      <div id="active-reservations-wrapper" class="glass" style="max-width: 900px; margin: 3rem auto 0 auto; border-radius: 24px; padding: 3rem; display: none;">
+        <h3 class="font-serif" style="font-size: 1.4rem; font-weight: 500; margin-bottom: 1.5rem;">Your Scheduled Visitions</h3>
+        <div id="active-reservations-list" style="display: flex; flex-direction: column; gap: 1rem;">
+          <!-- Loaded from localStorage dynamically -->
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Massive Luxury Footer -->
+  <footer class="luxury-footer">
+    <div class="max-width-container">
+      <div class="footer-grid">
+        <div class="footer-brand-col">
+          <div class="brand">CHANDAN<span>.</span></div>
+          <p>Curating visual standards and tailored hair geometry inside Mayfair since 2012. We reject compromising trends.</p>
+          <div class="footer-socials font-display">
+            <a href="#">Instagram</a>
+            <span class="divider"></span>
+            <a href="#">Pinterest</a>
+          </div>
+        </div>
+
+        <div class="footer-links-col">
+          <h4 class="font-display">Atelier Directory</h4>
+          <ul>
+            <li><a href="about.html">Our Philosophy</a></li>
+            <li><a href="services.html">Curated Services</a></li>
+            <li><a href="specialists.html">Our Master Stylists</a></li>
+            <li><a href="gallery.html">Transformation Portfolio</a></li>
+            <li><a href="booking.html" class="active">Schedule Reserve</a></li>
+            <li><a href="contact.html">Directions & Map</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-links-col">
+          <h4 class="font-display">Signature Menus</h4>
+          <ul>
+            <li><a href="services.html">Executive Haircut</a></li>
+            <li><a href="services.html">Beard Styling & Trim</a></li>
+            <li><a href="services.html">Follicular Hair Spa</a></li>
+            <li><a href="services.html">Hydra-Facial Skincare</a></li>
+            <li><a href="services.html">Bespoke Bridal Rituals</a></li>
+            <li><a href="services.html">Private Subscriptions</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-newsletter-col">
+          <h4 class="font-display">Inner Circle</h4>
+          <p>Subscribe to secure alerts on specialist calendar releases and private waitlist availabilities.</p>
+          <form class="newsletter-form">
+            <input required type="email" placeholder="Email address" aria-label="Email address">
+            <button type="submit" aria-label="Subscribe">➔</button>
+          </form>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <span>© 2026 Chandan Salon. All Rights Reserved.</span>
+        <button class="back-to-top" onclick="window.scrollTo({top:0, behavior:'smooth'})" aria-label="Scroll to top">
+          Back to Top <span style="transform: rotate(-90deg); display: inline-block; font-weight: 700; margin-left: 2px;">➔</span>
+        </button>
+      </div>
+    </div>
+  </footer>
+
+  <!-- GSAP Animation Library -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+
+  <!-- Script block to show/render booked reservations from LocalStorage -->
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const renderBookings = () => {
+        const wrapper = document.getElementById('active-reservations-wrapper');
+        const list = document.getElementById('active-reservations-list');
+        const bookings = JSON.parse(localStorage.getItem('chandan-appointments') || '[]');
+        
+        if (bookings.length > 0 && wrapper && list) {
+          wrapper.style.display = 'block';
+          list.innerHTML = '';
+          
+          bookings.forEach(b => {
+            const item = document.createElement('div');
+            item.style.padding = '1.25rem 1.75rem';
+            item.style.borderRadius = '16px';
+            item.style.border = '1px solid var(--border-color)';
+            item.style.backgroundColor = 'rgba(255, 255, 255, 0.02)';
+            item.style.display = 'flex';
+            item.style.justifyContent = 'space-between';
+            item.style.alignItems = 'center';
+            item.style.fontSize = '0.75rem';
+            
+            item.innerHTML = `
+              <div>
+                <strong style="color:var(--accent-gold); font-size: 0.85rem; text-transform: uppercase;">${b.service}</strong>
+                <div style="color:var(--text-secondary); margin-top:0.25rem;">Stylist: ${b.stylist} | Date: ${b.date} @ ${b.time}</div>
+              </div>
+              <button onclick="cancelBooking(${b.id})" style="color: #ef4444; font-size: 0.65rem; text-transform: uppercase; font-weight: 700; tracking-spacing: 0.1em; border: 1px solid rgba(239, 68, 68, 0.2); padding: 0.5rem 1rem; border-radius: 8px; transition: 0.2s;" onmouseover="this.style.borderColor='#ef4444'; this.style.backgroundColor='rgba(239, 68, 68, 0.05)'" onmouseout="this.style.borderColor='rgba(239, 68, 68, 0.2)'; this.style.backgroundColor='transparent'">Cancel Visition</button>
+            `;
+            list.appendChild(item);
+          });
+        } else if (wrapper) {
+          wrapper.style.display = 'none';
+        }
+      };
+
+      // Expose cancel globally
+      window.cancelBooking = (id) => {
+        let bookings = JSON.parse(localStorage.getItem('chandan-appointments') || '[]');
+        bookings = bookings.filter(b => b.id !== id);
+        localStorage.setItem('chandan-appointments', JSON.stringify(bookings));
+        renderBookings();
+        alert('Your visition has been cancelled.');
+      };
+
+      renderBookings();
+      
+      // Re-trigger render when a booking occurs
+      const form = document.getElementById('booking-wizard-form');
+      if (form) {
+        form.addEventListener('submit', () => {
+          setTimeout(renderBookings, 200);
+        });
+      }
+    });
+  </script>
+
+  <!-- Main Application Script -->
+  <script src="app.js"></script>
+</body>
+</html>

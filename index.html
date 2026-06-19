@@ -13,56 +13,14 @@
   <meta property="og:title" content="Chandan Salon | Premium Hair Design & Skincare Atelier" />
   <meta property="og:description" content="Meticulous British cutting standards meets organic botanical treatments in a masterfully crafted Mayfair atmosphere." />
   <meta property="og:url" content="https://www.chandansalon.com/" />
-  <meta property="og:image" content="https://images.unsplash.com/photo-1560066984-138dadb4c035?auto=format&fit=crop&w=1200&q=80" />
-
-  <!-- Twitter Card Metadata -->
-  <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="Chandan Salon | Premium Hair Design" />
-  <meta name="twitter:description" content="Experience Mayfair's premier luxury salon. Bespoke consultation and premium grooming." />
-  <meta name="twitter:image" content="https://images.unsplash.com/photo-1560066984-138dadb4c035?auto=format&fit=crop&w=1200&q=80" />
+  <meta property="og:image" content="assets/images/hero_haircut.png" />
 
   <!-- CSS Stylesheet -->
   <link rel="stylesheet" href="styles.css">
 
-  <!-- Swiper JS & CSS -->
+  <!-- Swiper CSS & JS -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
   <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
-
-  <!-- Leaflet Map CSS & JS -->
-  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
-  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
-
-  <!-- Tailwind CSS CDN -->
-  <script src="https://cdn.tailwindcss.com"></script>
-  <script>
-    tailwind.config = {
-      darkMode: 'class',
-      theme: {
-        extend: {
-          colors: {
-            accentGold: 'var(--accent-gold)',
-            bgPrimary: 'var(--bg-primary)',
-            bgSecondary: 'var(--bg-secondary)',
-            textPrimary: 'var(--text-primary)',
-            textSecondary: 'var(--text-secondary)',
-            borderTheme: 'var(--border-color)',
-            glassBg: 'var(--glass-bg)',
-            glassBorder: 'var(--glass-border)'
-          },
-          fontFamily: {
-            editorial: ['Playfair Display', 'serif'],
-            cormorant: ['Cormorant Garamond', 'serif'],
-            body: ['Plus Jakarta Sans', 'sans-serif'],
-            display: ['Poppins', 'sans-serif']
-          },
-          letterSpacing: {
-            luxury: '0.15em',
-            superluxury: '0.25em'
-          }
-        }
-      }
-    }
-  </script>
 
   <!-- Structured SEO Schema Data -->
   <script type="application/ld+json">
@@ -73,7 +31,7 @@
         "@type": "BeautySalon",
         "@id": "https://www.chandansalon.com/#salon",
         "name": "Chandan Salon",
-        "image": "https://images.unsplash.com/photo-1560066984-138dadb4c035?auto=format&fit=crop&w=800&q=80",
+        "image": "assets/images/hero_haircut.png",
         "priceRange": "$$$$",
         "telephone": "+44 20 7946 0122",
         "address": {
@@ -106,1371 +64,485 @@
           "https://www.instagram.com/chandansalon",
           "https://www.pinterest.com/chandansalon"
         ]
-      },
-      {
-        "@type": "FAQPage",
-        "@id": "https://www.chandansalon.com/#faq",
-        "mainEntity": [
-          {
-            "@type": "Question",
-            "name": "Do you accept walk-ins?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "To ensure absolute privacy and dedication to detail, we operate on a reservation-only basis. Walk-ins are subject to stylist slot availability."
-            }
-          },
-          {
-            "@type": "Question",
-            "name": "What organic products do you formulate with?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "We formulate our treatments with exclusively organic sulfate-free hair tonics, pure botanicals, and small-batch skin serums."
-            }
-          }
-        ]
       }
     ]
   }
   </script>
 </head>
-<body class="bg-bgPrimary text-textPrimary font-body relative min-h-screen">
+<body>
 
-  <!-- Interactive Custom Cursor Nodes -->
-  <div class="custom-cursor hidden lg:block" id="custom-cursor"></div>
-  <div class="custom-cursor-glow hidden lg:block" id="custom-cursor-glow"></div>
 
-  <!-- Ambient Mouse responsive lighting spheres -->
-  <div class="ambient-glow opacity-60" id="mouse-glow-1"></div>
-  <div class="ambient-glow opacity-30 top-[20%] left-[10%]"></div>
-  <div class="ambient-glow opacity-35 bottom-[10%] right-[5%]"></div>
 
-  <!-- 1. Cinematic Opening Loading Overlay -->
-  <div id="preloader" class="fixed inset-0 bg-[#060608] z-[9999] flex flex-col items-center justify-center overflow-hidden">
-    <!-- Starry Golden Particles Canvas -->
-    <canvas id="preloader-canvas" class="absolute inset-0 w-full h-full pointer-events-none"></canvas>
-    
-    <div class="relative flex flex-col items-center z-10 text-center px-4">
-      <!-- Minimalist Luxury logo line-drawing -->
-      <svg class="w-36 h-36 text-[#D4AF37] mb-8" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <circle class="logo-path glow-glow stroke-[1]" cx="50" cy="50" r="45" stroke="currentColor" />
-        <path class="logo-path glow-glow stroke-[1.5]" d="M 64 34 A 16 16 0 1 0 64 66" stroke="currentColor" stroke-linecap="round" />
-        <path class="logo-path glow-glow stroke-[1.5]" d="M 60 40 C 53 36, 46 40, 46 46 C 46 52, 54 52, 54 58 C 54 64, 46 68, 40 64" stroke="currentColor" stroke-linecap="round" />
-      </svg>
-      <h2 class="text-sm uppercase tracking-superluxury font-cormorant text-[#D4AF37] opacity-0 preloader-lbl">
-        CHANDAN SALON
-      </h2>
-      <p class="text-[9px] uppercase tracking-luxury text-gray-500 mt-2 opacity-0 preloader-lbl">
-        ATELIER MAYFAIR
-      </p>
+  <!-- Ambient Mouse Spotlight -->
+  <div class="ambient-glow"></div>
+
+  <!-- Cinematic Preloader Loading Overlay -->
+  <div id="preloader">
+    <canvas id="preloader-canvas"></canvas>
+    <div class="preloader-content">
+      <div class="preloader-logo">
+        <svg viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <circle class="preloader-logo-path stroke-[1]" cx="50" cy="50" r="45" stroke="currentColor" />
+          <path class="preloader-logo-path stroke-[1.5]" d="M 64 34 A 16 16 0 1 0 64 66" stroke="currentColor" stroke-linecap="round" />
+          <path class="preloader-logo-path stroke-[1.5]" d="M 60 40 C 53 36, 46 40, 46 46 C 46 52, 54 52, 54 58 C 54 64, 46 68, 40 64" stroke="currentColor" stroke-linecap="round" />
+        </svg>
+      </div>
+      <h2 class="preloader-title">CHANDAN SALON</h2>
+      <p class="preloader-subtitle">ATELIER MAYFAIR</p>
     </div>
   </div>
 
-  <!-- 2. Interactive Floating Navbar -->
-  <header class="fixed top-5 left-0 right-0 z-50 px-4 md:px-8">
-    <nav class="max-w-7xl mx-auto glass rounded-full px-6 py-4 flex items-center justify-between shadow-lg border border-borderTheme transition-all duration-300">
-      
-      <!-- Typography Logo -->
-      <a href="#home" class="flex items-center">
-        <span class="font-editorial text-lg md:text-xl font-semibold tracking-superluxury text-textPrimary hover:text-accentGold transition-colors">
-          CHANDAN
-        </span>
-      </a>
+  <!-- Sticky Luxury Header -->
+  <header class="luxury-header">
+    <div class="max-width-container">
+      <nav class="glass">
+        <!-- Logo -->
+        <a href="index.html" class="nav-brand">CHANDAN<span>.</span></a>
 
-      <!-- Desktop links -->
-      <ul class="hidden xl:flex items-center gap-6 text-[10px] font-semibold uppercase tracking-luxury text-textSecondary">
-        <li><a href="#home" class="nav-link text-textPrimary hover:text-accentGold transition-colors">Home</a></li>
-        <li><a href="#about" class="nav-link text-textPrimary hover:text-accentGold transition-colors">About</a></li>
-        <li><a href="#services" class="nav-link text-textPrimary hover:text-accentGold transition-colors">Services</a></li>
-        <li><a href="#gallery" class="nav-link text-textPrimary hover:text-accentGold transition-colors">Gallery</a></li>
-        <li><a href="#specialists" class="nav-link text-textPrimary hover:text-accentGold transition-colors">Specialists</a></li>
-        <li><a href="#testimonials" class="nav-link text-textPrimary hover:text-accentGold transition-colors">Reviews</a></li>
-        <li><a href="#pricing" class="nav-link text-textPrimary hover:text-accentGold transition-colors">Offers</a></li>
-        <li><a href="#faq" class="nav-link text-textPrimary hover:text-accentGold transition-colors">FAQ</a></li>
-        <li><a href="#contact" class="nav-link text-textPrimary hover:text-accentGold transition-colors">Contact</a></li>
-      </ul>
+        <!-- Links -->
+        <ul class="nav-links">
+          <li><a href="index.html" class="active">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="services.html">Services</a></li>
+          <li><a href="specialists.html">Specialists</a></li>
+          <li><a href="gallery.html">Gallery</a></li>
+          <li><a href="booking.html">Booking</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
 
-      <!-- Navbar Actions (Toggle & CTA) -->
-      <div class="hidden lg:flex items-center gap-4">
-        <!-- Language Switcher -->
-        <button onclick="toggleLanguage()" class="text-[10px] tracking-wider uppercase font-bold text-textSecondary hover:text-accentGold transition-colors px-2 py-1 border border-borderTheme rounded">
-          EN
-        </button>
-
-        <!-- Theme Toggle -->
-        <button id="theme-toggle" class="p-2 rounded-full border border-borderTheme hover:border-accentGold transition-colors text-textPrimary" aria-label="Toggle Mode">
-          <svg id="theme-toggle-sun" class="w-3.5 h-3.5 hidden text-accentGold" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 9H3m15.364-6.364l-.707.707M6.343 17.657l-.707.707m12.728 0l-.707-.707M6.343 6.343l-.707-.707M15 12a3 3 0 11-6 0 3 3 0 016 0z"/>
-          </svg>
-          <svg id="theme-toggle-moon" class="w-3.5 h-3.5 text-textPrimary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"/>
-          </svg>
-        </button>
-
-        <!-- Book Appointment -->
-        <button onclick="openBookingModal()" class="btn-luxury px-5 py-2 rounded-full text-[10px] uppercase tracking-wider font-semibold">
-          Book Appointment
-        </button>
-      </div>
-
-      <!-- Mobile navigation menu controls -->
-      <div class="flex xl:hidden items-center gap-3">
-        <button id="theme-toggle-mobile" class="p-2 rounded-full border border-borderTheme text-textPrimary" aria-label="Toggle Theme Mobile">
-          <svg class="w-3.5 h-3.5 text-textPrimary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 9H3m15.364-6.364l-.707.707M6.343 17.657l-.707.707m12.728 0l-.707-.707M6.343 6.343l-.707-.707M15 12a3 3 0 11-6 0 3 3 0 016 0z"/>
-          </svg>
-        </button>
-
-        <button id="mobile-menu-btn" class="p-2 text-textPrimary" aria-label="Toggle Menu">
-          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path id="menu-btn-icon" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
-          </svg>
-        </button>
-      </div>
-
-    </nav>
+        <!-- Actions -->
+        <div class="nav-actions">
+          <button class="theme-toggle-btn" aria-label="Toggle Theme">
+            <!-- Sun Icon (shown in dark theme) -->
+            <svg class="sun-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 9H3m15.364-6.364l-.707.707M6.343 17.657l-.707.707m12.728 0l-.707-.707M6.343 6.343l-.707-.707M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path>
+            </svg>
+            <!-- Moon Icon (shown in light theme) -->
+            <svg class="moon-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"></path>
+            </svg>
+          </button>
+          <a href="booking.html" class="btn-luxury btn-primary hidden lg:inline-block">Book Experience</a>
+          
+          <!-- Burger Menu -->
+          <button class="mobile-menu-btn" aria-label="Toggle Menu">
+            <span></span>
+            <span></span>
+            <span></span>
+          </button>
+        </div>
+      </nav>
+    </div>
   </header>
 
-  <!-- Mobile navigation full-screen overlay -->
-  <div id="mobile-menu-overlay" class="fixed inset-0 bg-[#060608]/98 z-[45] flex flex-col justify-center items-center opacity-0 pointer-events-none transition-all duration-300">
-    <ul class="text-center flex flex-col gap-6 text-sm font-editorial-cormorant tracking-luxury uppercase text-white">
-      <li><a href="#home" onclick="toggleMobileMenu()" class="hover:text-accentGold transition-colors">Home</a></li>
-      <li><a href="#about" onclick="toggleMobileMenu()" class="hover:text-accentGold transition-colors">About</a></li>
-      <li><a href="#services" onclick="toggleMobileMenu()" class="hover:text-accentGold transition-colors">Services</a></li>
-      <li><a href="#gallery" onclick="toggleMobileMenu()" class="hover:text-accentGold transition-colors">Gallery</a></li>
-      <li><a href="#specialists" onclick="toggleMobileMenu()" class="hover:text-accentGold transition-colors">Specialists</a></li>
-      <li><a href="#testimonials" onclick="toggleMobileMenu()" class="hover:text-accentGold transition-colors">Reviews</a></li>
-      <li><a href="#pricing" onclick="toggleMobileMenu()" class="hover:text-accentGold transition-colors">Offers</a></li>
-      <li><a href="#faq" onclick="toggleMobileMenu()" class="hover:text-accentGold transition-colors">FAQ</a></li>
-      <li><a href="#contact" onclick="toggleMobileMenu()" class="hover:text-accentGold transition-colors">Contact</a></li>
-      <li class="mt-4">
-        <button onclick="toggleMobileMenu(); openBookingModal();" class="btn-luxury px-8 py-3 rounded-full text-xs tracking-luxury uppercase">
-          Book Appointment
-        </button>
-      </li>
+  <!-- Mobile Overlay Navigation -->
+  <div class="mobile-menu-overlay">
+    <ul>
+      <li><a href="index.html" class="active">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="services.html">Services</a></li>
+      <li><a href="specialists.html">Specialists</a></li>
+      <li><a href="gallery.html">Gallery</a></li>
+      <li><a href="booking.html">Booking</a></li>
+      <li><a href="contact.html">Contact</a></li>
+      <li><a href="booking.html" class="btn-luxury btn-primary">Book Experience</a></li>
     </ul>
   </div>
 
-  <!-- 3. Hero Section (The Hook) -->
-  <section id="home" class="min-h-screen flex items-center justify-center relative overflow-hidden pt-24 px-4 md:px-8">
-    <!-- Parallax Background Image Layer (No Video fallback) -->
-    <div class="absolute inset-0 bg-cover bg-center bg-no-repeat pointer-events-none scale-105" style="background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRyS4STi0fHPqwuAQdJ5y7AYFYvx8rtoLlbpuyTi_O5W-ertTm2TKWaoN3i&s=10');" id="hero-parallax-bg"></div>
-    <div class="absolute inset-0 bg-gradient-to-b from-[#060608]/90 via-[#060608]/75 to-[#060608]"></div>
-
-    <div class="max-w-7xl mx-auto w-full relative z-10 grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
-      
-      <!-- Left Editorial Column -->
-      <div class="lg:col-span-7 space-y-8 text-left">
-        <div class="inline-flex items-center gap-2 border border-borderTheme px-4 py-1.5 rounded-full text-[10px] uppercase tracking-luxury text-accentGold bg-[#121216]/50 backdrop-blur-md">
-          <span class="inline-block w-1.5 h-1.5 bg-accentGold rounded-full animate-ping"></span>
-          RESERVE EXCLUSIVITY - MAYFAIR, LONDON
+  <!-- Hero Section -->
+  <section class="hero-section">
+    <div class="hero-bg-layer" style="background-image: url('https://images.unsplash.com/photo-1560066984-138dadb4c035?auto=format&fit=crop&w=1920&q=80');"></div>
+    <div class="hero-overlay"></div>
+    
+    <div class="max-width-container hero-grid">
+      <div class="hero-content">
+        <div class="hero-badge">
+          <span class="pulse-dot"></span>
+          Reserve Exclusivity - Mayfair, London
         </div>
-        
-        <h1 class="font-editorial text-5xl md:text-7xl lg:text-8xl leading-[1.05] tracking-tight text-white" id="hero-title">
-          Crafting <span class="italic text-accentGold">Confidence.</span> <br>
-          One Style at a Time.
+        <h1 class="hero-title">
+          Crafting <span>Confidence.</span><br>One Style at a Time.
         </h1>
-        
-        <p class="text-sm md:text-base text-gray-400 max-w-lg leading-relaxed font-body">
+        <p class="hero-description font-display">
           We synthesize meticulous British precision and organic apothecary formulas. Every reservation is a bespoke styling experience configured specifically to command visual authority.
         </p>
-
-        <div class="flex flex-col sm:flex-row gap-4 pt-4">
-          <button onclick="openBookingModal()" class="btn-luxury px-8 py-4 rounded-full text-xs font-semibold tracking-luxury uppercase">
-            Book Absolute Experience
-          </button>
-          <a href="#services" class="border border-borderTheme hover:border-accentGold bg-[#121216]/20 hover:bg-[#121216]/50 text-white text-xs font-semibold tracking-luxury uppercase px-8 py-4 rounded-full text-center transition-all duration-300 backdrop-blur-sm">
-            Explore Menu
-          </a>
+        <div class="hero-buttons">
+          <a href="booking.html" class="btn-luxury btn-primary">Book Absolute Experience</a>
+          <a href="services.html" class="btn-luxury btn-outline">Explore Menu</a>
         </div>
       </div>
 
-      <!-- Right Column: Interactive AntiGravity Glass Cards -->
-      <div class="lg:col-span-5 relative flex justify-center items-center min-h-[380px] lg:min-h-[460px]">
-        <div class="relative w-[280px] h-[340px] md:w-[320px] md:h-[400px] cursor-pointer" id="hero-interactive-container">
+      <div class="hero-visual-col">
+        <div class="hero-card-container">
+          <!-- Main Card utilizing local image assets -->
+          <div class="hero-card-main" style="background-image: url('assets/images/hero_haircut.png');"></div>
           
-          <!-- Master card showing salon tools details -->
-          <div class="absolute inset-0 rounded-2xl overflow-hidden border border-borderTheme bg-cover bg-center" style="background-image: url('https://imgs.search.brave.com/jhB5kFi1aEsa-1GYr4YzfC0zxABwtPC-hfzeidepJ1k/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly93d3cu/Z2VldGFuamFsaXNh/bG9uLmNvbS93cC1j/b250ZW50L3VwbG9h/ZHMvMjAyMy8xMC9o/YWlyLXNhbG9uLW5l/YXItbWUtY3Jvc3Np/bmctcm9hZC1wYXRu/YS5qcGc');" id="hero-main-card">
-            <div class="absolute inset-0 bg-gradient-to-t from-[#060608]/90 via-transparent to-transparent"></div>
-          </div>
-
-          <!-- Glass Card 1: Authority metrics -->
-          <div class="absolute top-[-30px] left-[-30px] glass p-4 rounded-xl shadow-lg border border-borderTheme flex items-center gap-3 transition-transform duration-300" id="hero-floating-card-1">
-            <div class="text-accentGold font-editorial text-2xl">10+</div>
+          <!-- Floating Metrics Glass Card 1 -->
+          <div class="hero-floating-card hero-floating-card-1 glass">
+            <div class="number">10+</div>
             <div>
-              <p class="text-[9px] uppercase tracking-wider text-textSecondary font-semibold">Years Standard</p>
-              <h4 class="text-[10px] font-bold text-textPrimary uppercase">Master Experience</h4>
+              <div class="label font-display">Years Standard</div>
+              <div class="title">Master Stylists</div>
             </div>
           </div>
 
-          <!-- Glass Card 2: Rating metrics -->
-          <div class="absolute bottom-[-20px] right-[-20px] glass p-4 rounded-xl shadow-lg border border-borderTheme flex items-center gap-3 transition-transform duration-300" id="hero-floating-card-2">
-            <div class="text-accentGold text-base">★</div>
+          <!-- Floating Metrics Glass Card 2 -->
+          <div class="hero-floating-card hero-floating-card-2 glass">
+            <div class="star">★</div>
             <div>
-              <p class="text-[9px] uppercase tracking-wider text-textSecondary font-semibold">5000+ Clients</p>
-              <h4 class="text-[10px] font-bold text-textPrimary uppercase">4.9 average score</h4>
+              <div class="label font-display">5000+ Clients</div>
+              <div class="title">4.9/5 Score</div>
             </div>
           </div>
-
         </div>
       </div>
-
     </div>
 
-    <!-- Animated Scroll indicator -->
-    <div class="absolute bottom-10 left-1/2 transform -translate-x-1/2 flex flex-col items-center gap-2 text-[10px] uppercase tracking-widest text-textSecondary pointer-events-none">
+    <div class="scroll-indicator">
       <span>Scroll</span>
-      <div class="w-[1.5px] h-8 border border-borderTheme rounded-full relative flex justify-center py-1">
-        <span class="inline-block w-1 h-1 bg-accentGold rounded-full scroll-indicator-dot"></span>
-      </div>
+      <div class="scroll-indicator-bar"></div>
     </div>
   </section>
 
-  <!-- 4. About Section (The Story) -->
-  <section id="about" class="py-28 px-4 md:px-8 max-w-7xl mx-auto relative z-10">
-    <div class="grid grid-cols-1 lg:grid-cols-12 gap-16 items-center">
-      
-      <!-- Left Column: Story Composition -->
-      <div class="lg:col-span-5 space-y-6">
-        <p class="text-xs uppercase tracking-superluxury text-accentGold font-semibold">The Atelier</p>
-        <h2 class="font-editorial text-4xl md:text-5xl lg:text-6xl text-textPrimary leading-tight">
-          Redefining Visual <br>
-          <span class="italic text-accentGold">Authority.</span>
-        </h2>
-        <div class="w-12 h-[1px] bg-accentGold"></div>
-        <p class="text-xs text-textSecondary leading-relaxed">
+  <!-- About Hook Section -->
+  <section class="section-padding" style="position: relative; z-index: 10;">
+    <div class="max-width-container about-grid">
+      <div class="about-text">
+        <span class="font-display" style="font-size: 0.65rem; text-transform: uppercase; letter-spacing: 0.2em; color: var(--accent-gold); font-weight: 700; display: block; margin-bottom: 0.8rem;">The Atelier</span>
+        <h3>Redefining Visual <span>Authority.</span></h3>
+        <div class="divider"></div>
+        <p>
           Founded in 2012 by master artisan Chandan Dev, Chandan Salon rejects generic styling trends in favor of tailored geometric hair architecture. Our philosophy treats grooming as a visual business posture.
         </p>
-        <p class="text-xs text-textSecondary leading-relaxed">
+        <p>
           "Your appearance commands the first visual conversation. Our signature methods ensure that message is one of distinction and absolute leadership."
         </p>
-        
-        <!-- Founder signature placeholder -->
-        <div class="pt-4 flex items-center gap-4">
-          <div class="font-cormorant italic text-lg text-textPrimary">Chandan Dev</div>
-          <span class="w-10 h-[1.5px] bg-borderTheme"></span>
-          <span class="text-[9px] uppercase tracking-luxury text-textSecondary font-bold">Founder & Director</span>
+        <div class="about-signature">
+          <div class="name">Chandan Dev</div>
+          <div class="line"></div>
+          <div class="title">Founder & Director</div>
         </div>
+        <a href="about.html" class="btn-luxury btn-outline" style="margin-top: 2.5rem;">Our History & Philosophy</a>
       </div>
 
-      <!-- Right Column: Asymmetrical collage and visual timeline -->
-      <div class="lg:col-span-7 grid grid-cols-1 sm:grid-cols-2 gap-8 items-center">
-        <!-- Collage main image -->
-        <div class="rounded-2xl overflow-hidden border border-borderTheme aspect-[3/4] bg-bgSecondary">
-          <img src="https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?auto=format&fit=crop&w=600&q=80" alt="Bespoke hair spa treatment" class="w-full h-full object-cover" />
+      <div class="about-timeline-col">
+        <div class="about-timeline-img">
+          <img src="assets/images/hair_design.png" alt="Bespoke hair design at Mayfair">
         </div>
-        
-        <!-- Interactive timeline values -->
-        <div class="space-y-8">
-          <div class="relative pl-6 border-l border-borderTheme">
-            <span class="absolute top-1.5 left-[-4.5px] w-2.5 h-2.5 rounded-full bg-accentGold"></span>
-            <h4 class="text-xs font-bold uppercase tracking-wider text-textPrimary">2012 - The Genesis</h4>
-            <p class="text-[11px] text-textSecondary mt-1">First boutique opened in Knightsbridge, focusing on premium private consulting.</p>
+        <div class="about-timeline">
+          <div class="timeline-node">
+            <h4>2012 - The Genesis</h4>
+            <p>First boutique opened in Knightsbridge, focusing on premium private consulting and master scissor work.</p>
           </div>
-          
-          <div class="relative pl-6 border-l border-borderTheme">
-            <span class="absolute top-1.5 left-[-4.5px] w-2.5 h-2.5 rounded-full bg-accentGold"></span>
-            <h4 class="text-xs font-bold uppercase tracking-wider text-textPrimary">2018 - Mayfair expansion</h4>
-            <p class="text-[11px] text-textSecondary mt-1">Relocated to Mayfair Promenade to support complete skin aesthetics and bridal rituals.</p>
+          <div class="timeline-node">
+            <h4>2018 - Mayfair Expansion</h4>
+            <p>Relocated to Mayfair Promenade to support complete skin aesthetics, beard styling rituals, and private suites.</p>
           </div>
-
-          <div class="relative pl-6 border-l border-borderTheme">
-            <span class="absolute top-1.5 left-[-4.5px] w-2.5 h-2.5 rounded-full bg-accentGold"></span>
-            <h4 class="text-xs font-bold uppercase tracking-wider text-textPrimary">2026 - Digital Excellence</h4>
-            <p class="text-[11px] text-textSecondary mt-1">Configured multi-step visual schedulers to secure complete customer convenience.</p>
+          <div class="timeline-node">
+            <h4>2026 - Digital Excellence</h4>
+            <p>Configured interactive booking wizards to secure seamless client coordination and concierge level accessibility.</p>
           </div>
         </div>
       </div>
-
     </div>
   </section>
 
-  <!-- 5. Services Bento Grid -->
-  <section id="services" class="py-28 bg-bgSecondary border-y border-borderTheme relative z-10 transition-colors duration-500">
-    <div class="max-w-7xl mx-auto px-4 md:px-8">
-      
-      <!-- Section Headers -->
-      <div class="text-center max-w-2xl mx-auto mb-20 space-y-4">
-        <p class="text-xs uppercase tracking-superluxury text-accentGold font-semibold">Curated Menu</p>
-        <h2 class="font-editorial text-4xl md:text-5xl lg:text-6xl text-textPrimary leading-tight">
-          Curated Bento Offerings
-        </h2>
-        <div class="w-12 h-[1px] bg-accentGold mx-auto mt-4"></div>
+  <!-- Curated Featured Offerings -->
+  <section class="section-padding" style="background-color: var(--bg-secondary); position: relative; z-index: 10; border-y: 1px solid var(--border-color);">
+    <div class="max-width-container">
+      <div class="editorial-header">
+        <span class="badge font-display">Featured Experience</span>
+        <h2>Curated Signature <span>Offerings</span></h2>
+        <div class="divider"></div>
       </div>
 
-      <!-- Bento Grid Layout containing 14 Services -->
-      <div class="grid grid-cols-1 md:grid-cols-12 gap-6" id="bento-grid">
-        
-        <!-- Service 1: Hair Cut (Double Width) -->
-        <div class="md:col-span-8 bento-card rounded-2xl flex flex-col sm:flex-row justify-between bg-bgPrimary border border-borderTheme overflow-hidden group">
-          <div class="p-8 flex flex-col justify-between flex-1 space-y-6">
-            <div class="space-y-2">
-              <span class="text-[10px] uppercase tracking-luxury text-accentGold font-semibold">Scissors standard</span>
-              <h3 class="font-editorial text-2xl md:text-3xl text-textPrimary">Executive Haircut</h3>
-              <p class="text-xs text-textSecondary leading-relaxed">
-                Precision custom scissor work and texture adjustments designed to fit personal facial parameters.
-              </p>
+      <!-- Bento Grid (Highlights 3 main services) -->
+      <div class="bento-container">
+        <!-- Service 1: Executive Haircut -->
+        <div class="bento-card double-width glass">
+          <div class="bento-card-info">
+            <div>
+              <span class="card-category font-display">Hair Design</span>
+              <h3>Executive Haircut</h3>
+              <p>Precision custom scissor cutting, texture adjustment, and custom blowouts designed to fit personal facial structure.</p>
             </div>
-            <div class="flex items-center justify-between text-xs pt-4">
-              <div>
-                <span class="block text-[10px] uppercase tracking-wider text-textSecondary">Duration</span>
-                <span class="font-semibold text-textPrimary">45 Mins</span>
+            <div class="bento-card-pricing">
+              <div class="pricing-item">
+                <span class="label font-display">Duration</span>
+                <span class="value">45 Mins</span>
               </div>
-              <div class="text-right">
-                <span class="block text-[10px] uppercase tracking-wider text-textSecondary">Rate</span>
-                <span class="font-semibold text-accentGold text-base">From $85</span>
+              <div class="pricing-item">
+                <span class="label font-display">Rate</span>
+                <span class="value rate">From $85</span>
               </div>
+              <a href="booking.html?service=Executive Haircut" class="btn-luxury btn-primary">Book Now</a>
             </div>
-            <button onclick="openBookingModal('Hair Cut')" class="btn-luxury py-2.5 rounded-xl text-[10px] uppercase tracking-luxury font-bold w-full text-center">
-              Select Experience
-            </button>
           </div>
-          <!-- Image Layer -->
-          <div class="w-full sm:w-1/2 aspect-square sm:aspect-auto bg-cover bg-center overflow-hidden">
-            <img src="https://images.unsplash.com/photo-1503951914875-452162b0f3f1?auto=format&fit=crop&w=600&q=80" alt="Executive Haircut" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" />
+          <div class="bento-card-img-wrapper">
+            <img src="https://images.unsplash.com/photo-1503951914875-452162b0f3f1?auto=format&fit=crop&w=800&q=80" alt="Executive Haircut">
           </div>
         </div>
 
-        <!-- Service 2: Hair Styling -->
-        <div class="md:col-span-4 bento-card rounded-2xl bg-bgPrimary p-8 flex flex-col justify-between border border-borderTheme">
-          <div class="space-y-4">
-            <span class="text-[10px] uppercase tracking-luxury text-accentGold font-semibold">Atelier finish</span>
-            <h3 class="font-editorial text-xl md:text-2xl text-textPrimary">Hair Styling</h3>
-            <p class="text-xs text-textSecondary leading-relaxed">Blowouts, editorial molding, and signature texturizing styling.</p>
+        <!-- Service 2: Beard Design -->
+        <div class="bento-card glass">
+          <div>
+            <span class="card-category font-display">Grooming</span>
+            <h3>Beard Design</h3>
+            <p>Traditional straight razor outline definition, alignment, hot lavender towel wrap, and active botanical beard oils.</p>
           </div>
-          <div class="flex items-center justify-between text-xs border-t border-borderTheme/50 pt-4 mt-6">
-            <span>30 Mins</span>
-            <span class="text-accentGold font-bold">From $60</span>
-          </div>
-          <button onclick="openBookingModal('Hair Styling')" class="w-full py-2.5 mt-4 border border-borderTheme hover:border-accentGold rounded-xl text-[10px] uppercase tracking-luxury text-center hover:bg-accentGold hover:text-black transition-all">
-            Select
-          </button>
-        </div>
-
-        <!-- Service 3: Hair Spa -->
-        <div class="md:col-span-4 bento-card rounded-2xl bg-bgPrimary p-8 flex flex-col justify-between border border-borderTheme">
-          <div class="space-y-4">
-            <span class="text-[10px] uppercase tracking-luxury text-accentGold font-semibold">Vital restoration</span>
-            <h3 class="font-editorial text-xl md:text-2xl text-textPrimary">Hair Spa</h3>
-            <p class="text-xs text-textSecondary leading-relaxed">Deep follicular nourishment, cellular hydration therapy, and scalp health.</p>
-          </div>
-          <div class="flex items-center justify-between text-xs border-t border-borderTheme/50 pt-4 mt-6">
-            <span>60 Mins</span>
-            <span class="text-accentGold font-bold">From $110</span>
-          </div>
-          <button onclick="openBookingModal('Hair Spa')" class="w-full py-2.5 mt-4 border border-borderTheme hover:border-accentGold rounded-xl text-[10px] uppercase tracking-luxury text-center hover:bg-accentGold hover:text-black transition-all">
-            Select
-          </button>
-        </div>
-
-        <!-- Service 4: Hair Color (Double Width) -->
-        <div class="md:col-span-8 bento-card rounded-2xl flex flex-col sm:flex-row-reverse justify-between bg-bgPrimary border border-borderTheme overflow-hidden group">
-          <div class="p-8 flex flex-col justify-between flex-1 space-y-6">
-            <div class="space-y-2">
-              <span class="text-[10px] uppercase tracking-luxury text-accentGold font-semibold">Color restoration</span>
-              <h3 class="font-editorial text-2xl md:text-3xl text-textPrimary">Balayage & Tint</h3>
-              <p class="text-xs text-textSecondary leading-relaxed">
-                Premium multi-dimensional tinting, customized organic color glazes, and shadow roots.
-              </p>
-            </div>
-            <div class="flex items-center justify-between text-xs pt-4">
-              <div>
-                <span class="block text-[10px] uppercase text-textSecondary">Duration</span>
-                <span class="font-semibold text-textPrimary">120 Mins</span>
+          <div>
+            <div class="bento-card-pricing">
+              <div class="pricing-item">
+                <span class="label font-display">Duration</span>
+                <span class="value">30 Mins</span>
               </div>
-              <div class="text-right">
-                <span class="block text-[10px] uppercase text-textSecondary">Rate</span>
-                <span class="font-semibold text-accentGold text-base">From $160</span>
+              <div class="pricing-item">
+                <span class="label font-display">Rate</span>
+                <span class="value rate">From $50</span>
               </div>
             </div>
-            <button onclick="openBookingModal('Hair Color')" class="btn-luxury py-2.5 rounded-xl text-[10px] uppercase tracking-luxury font-bold w-full text-center">
-              Select Experience
-            </button>
-          </div>
-          <div class="w-full sm:w-1/2 aspect-square sm:aspect-auto bg-cover bg-center overflow-hidden">
-            <img src="https://images.unsplash.com/photo-1605497746444-ac9dbd324ce4?auto=format&fit=crop&w=600&q=80" alt="Hair Color Tint" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" />
+            <a href="booking.html?service=Beard Design" class="btn-luxury btn-outline btn-select">Select</a>
           </div>
         </div>
 
-        <!-- Service 5: Beard Styling -->
-        <div class="md:col-span-4 bento-card rounded-2xl bg-bgPrimary p-8 flex flex-col justify-between border border-borderTheme">
-          <div class="space-y-4">
-            <span class="text-[10px] uppercase tracking-luxury text-accentGold font-semibold">Barber signature</span>
-            <h3 class="font-editorial text-xl md:text-2xl text-textPrimary">Beard Styling</h3>
-            <p class="text-xs text-textSecondary leading-relaxed">Razor razor outline definition, alignment, and soothing botanical beard oils.</p>
+        <!-- Service 3: Hydra-Facial -->
+        <div class="bento-card glass">
+          <div>
+            <span class="card-category font-display">Skincare</span>
+            <h3>Hydra-Facial</h3>
+            <p>Deep pore cleansing, multi-peptide cellular hydration mask, skin peel, and soothing face massage.</p>
           </div>
-          <div class="flex items-center justify-between text-xs border-t border-borderTheme/50 pt-4 mt-6">
-            <span>30 Mins</span>
-            <span class="text-accentGold font-bold">From $50</span>
-          </div>
-          <button onclick="openBookingModal('Beard Styling')" class="w-full py-2.5 mt-4 border border-borderTheme hover:border-accentGold rounded-xl text-[10px] uppercase tracking-luxury text-center hover:bg-accentGold hover:text-black transition-all">
-            Select
-          </button>
-        </div>
-
-        <!-- Service 6: Facial -->
-        <div class="md:col-span-4 bento-card rounded-2xl bg-bgPrimary p-8 flex flex-col justify-between border border-borderTheme">
-          <div class="space-y-4">
-            <span class="text-[10px] uppercase tracking-luxury text-accentGold font-semibold">Botanical skin</span>
-            <h3 class="font-editorial text-xl md:text-2xl text-textPrimary">Hydra-Facial</h3>
-            <p class="text-xs text-textSecondary leading-relaxed">Deep pore cleansing, multi-peptide cellular hydration mask, and massage.</p>
-          </div>
-          <div class="flex items-center justify-between text-xs border-t border-borderTheme/50 pt-4 mt-6">
-            <span>60 Mins</span>
-            <span class="text-accentGold font-bold">From $95</span>
-          </div>
-          <button onclick="openBookingModal('Facial')" class="w-full py-2.5 mt-4 border border-borderTheme hover:border-accentGold rounded-xl text-[10px] uppercase tracking-luxury text-center hover:bg-accentGold hover:text-black transition-all">
-            Select
-          </button>
-        </div>
-
-        <!-- Service 7: Bridal Makeup -->
-        <div class="md:col-span-4 bento-card rounded-2xl bg-bgPrimary p-8 flex flex-col justify-between border border-borderTheme">
-          <div class="space-y-4">
-            <span class="text-[10px] uppercase tracking-luxury text-accentGold font-semibold">Bridal Suite</span>
-            <h3 class="font-editorial text-xl md:text-2xl text-textPrimary">Bridal Makeup</h3>
-            <p class="text-xs text-textSecondary leading-relaxed">High-definition ritual makeup, facial glow serums, and secure adjustments.</p>
-          </div>
-          <div class="flex items-center justify-between text-xs border-t border-borderTheme/50 pt-4 mt-6">
-            <span>150 Mins</span>
-            <span class="text-accentGold font-bold">From $350</span>
-          </div>
-          <button onclick="openBookingModal('Bridal Makeup')" class="w-full py-2.5 mt-4 border border-borderTheme hover:border-accentGold rounded-xl text-[10px] uppercase tracking-luxury text-center hover:bg-accentGold hover:text-black transition-all">
-            Select
-          </button>
-        </div>
-
-        <!-- Service 8: Groom Makeup -->
-        <div class="md:col-span-4 bento-card rounded-2xl bg-bgPrimary p-8 flex flex-col justify-between border border-borderTheme">
-          <div class="space-y-4">
-            <span class="text-[10px] uppercase tracking-luxury text-accentGold font-semibold">Groom Ritual</span>
-            <h3 class="font-editorial text-xl md:text-2xl text-textPrimary">Groom Makeup</h3>
-            <p class="text-xs text-textSecondary leading-relaxed">Corrective skin balancing, anti-shine matte finish, and hair alignment.</p>
-          </div>
-          <div class="flex items-center justify-between text-xs border-t border-borderTheme/50 pt-4 mt-6">
-            <span>90 Mins</span>
-            <span class="text-accentGold font-bold">From $180</span>
-          </div>
-          <button onclick="openBookingModal('Groom Makeup')" class="w-full py-2.5 mt-4 border border-borderTheme hover:border-accentGold rounded-xl text-[10px] uppercase tracking-luxury text-center hover:bg-accentGold hover:text-black transition-all">
-            Select
-          </button>
-        </div>
-
-        <!-- Service 9: Keratin -->
-        <div class="md:col-span-4 bento-card rounded-2xl bg-bgPrimary p-8 flex flex-col justify-between border border-borderTheme">
-          <div class="space-y-4">
-            <span class="text-[10px] uppercase tracking-luxury text-accentGold font-semibold">Vital smooth</span>
-            <h3 class="font-editorial text-xl md:text-2xl text-textPrimary">Keratin Treatment</h3>
-            <p class="text-xs text-textSecondary leading-relaxed">Smooth molecular coating to eliminate frizz and secure long-term shine.</p>
-          </div>
-          <div class="flex items-center justify-between text-xs border-t border-borderTheme/50 pt-4 mt-6">
-            <span>180 Mins</span>
-            <span class="text-accentGold font-bold">From $250</span>
-          </div>
-          <button onclick="openBookingModal('Keratin')" class="w-full py-2.5 mt-4 border border-borderTheme hover:border-accentGold rounded-xl text-[10px] uppercase tracking-luxury text-center hover:bg-accentGold hover:text-black transition-all">
-            Select
-          </button>
-        </div>
-
-        <!-- Service 10: Smoothening -->
-        <div class="md:col-span-4 bento-card rounded-2xl bg-bgPrimary p-8 flex flex-col justify-between border border-borderTheme">
-          <div class="space-y-4">
-            <span class="text-[10px] uppercase tracking-luxury text-accentGold font-semibold">Follicular straight</span>
-            <h3 class="font-editorial text-xl md:text-2xl text-textPrimary">Smoothening</h3>
-            <p class="text-xs text-textSecondary leading-relaxed">Thermal straightening using mild, formalde-free active botanical formulas.</p>
-          </div>
-          <div class="flex items-center justify-between text-xs border-t border-borderTheme/50 pt-4 mt-6">
-            <span>150 Mins</span>
-            <span class="text-accentGold font-bold">From $220</span>
-          </div>
-          <button onclick="openBookingModal('Smoothening')" class="w-full py-2.5 mt-4 border border-borderTheme hover:border-accentGold rounded-xl text-[10px] uppercase tracking-luxury text-center hover:bg-accentGold hover:text-black transition-all">
-            Select
-          </button>
-        </div>
-
-        <!-- Service 11: Massage -->
-        <div class="md:col-span-4 bento-card rounded-2xl bg-bgPrimary p-8 flex flex-col justify-between border border-borderTheme">
-          <div class="space-y-4">
-            <span class="text-[10px] uppercase tracking-luxury text-accentGold font-semibold">Tension relief</span>
-            <h3 class="font-editorial text-xl md:text-2xl text-textPrimary">Aromatherapy Massage</h3>
-            <p class="text-xs text-textSecondary leading-relaxed">Full-body deep tissue massage infused with lavender, basil, and amber oils.</p>
-          </div>
-          <div class="flex items-center justify-between text-xs border-t border-borderTheme/50 pt-4 mt-6">
-            <span>75 Mins</span>
-            <span class="text-accentGold font-bold">From $120</span>
-          </div>
-          <button onclick="openBookingModal('Massage')" class="w-full py-2.5 mt-4 border border-borderTheme hover:border-accentGold rounded-xl text-[10px] uppercase tracking-luxury text-center hover:bg-accentGold hover:text-black transition-all">
-            Select
-          </button>
-        </div>
-
-        <!-- Service 12: Head Massage -->
-        <div class="md:col-span-4 bento-card rounded-2xl bg-bgPrimary p-8 flex flex-col justify-between border border-borderTheme">
-          <div class="space-y-4">
-            <span class="text-[10px] uppercase tracking-luxury text-accentGold font-semibold">Scalp soothe</span>
-            <h3 class="font-editorial text-xl md:text-2xl text-textPrimary">Scalp Head Massage</h3>
-            <p class="text-xs text-textSecondary leading-relaxed">Acupressure focus stimulation, hair oil application, and hot towel wrapping.</p>
-          </div>
-          <div class="flex items-center justify-between text-xs border-t border-borderTheme/50 pt-4 mt-6">
-            <span>20 Mins</span>
-            <span class="text-accentGold font-bold">From $45</span>
-          </div>
-          <button onclick="openBookingModal('Head Massage')" class="w-full py-2.5 mt-4 border border-borderTheme hover:border-accentGold rounded-xl text-[10px] uppercase tracking-luxury text-center hover:bg-accentGold hover:text-black transition-all">
-            Select
-          </button>
-        </div>
-
-        <!-- Service 13: Kids Haircut -->
-        <div class="md:col-span-4 bento-card rounded-2xl bg-bgPrimary p-8 flex flex-col justify-between border border-borderTheme">
-          <div class="space-y-4">
-            <span class="text-[10px] uppercase tracking-luxury text-accentGold font-semibold">Young standard</span>
-            <h3 class="font-editorial text-xl md:text-2xl text-textPrimary">Junior Haircut</h3>
-            <p class="text-xs text-textSecondary leading-relaxed">Precise, styling scissor cutting tailored to kids under 12 years of age.</p>
-          </div>
-          <div class="flex items-center justify-between text-xs border-t border-borderTheme/50 pt-4 mt-6">
-            <span>25 Mins</span>
-            <span class="text-accentGold font-bold">From $40</span>
-          </div>
-          <button onclick="openBookingModal('Kids Haircut')" class="w-full py-2.5 mt-4 border border-borderTheme hover:border-accentGold rounded-xl text-[10px] uppercase tracking-luxury text-center hover:bg-accentGold hover:text-black transition-all">
-            Select
-          </button>
-        </div>
-
-        <!-- Service 14: Premium Packages (Double Width) -->
-        <div class="md:col-span-8 bento-card rounded-2xl flex flex-col sm:flex-row justify-between bg-bgPrimary border border-borderTheme overflow-hidden group">
-          <div class="p-8 flex flex-col justify-between flex-1 space-y-6">
-            <div class="space-y-2">
-              <span class="text-[10px] uppercase tracking-luxury text-accentGold font-semibold">The Royal Ritual</span>
-              <h3 class="font-editorial text-2xl md:text-3xl text-textPrimary">Grooming Master Package</h3>
-              <p class="text-xs text-textSecondary leading-relaxed">
-                A collaborative synthesis of our Executive Haircut, Beard Design, Scalp Massage, and Express Hydra-Facial.
-              </p>
-            </div>
-            <div class="flex items-center justify-between text-xs pt-4">
-              <div>
-                <span class="block text-[10px] uppercase text-textSecondary">Duration</span>
-                <span class="font-semibold text-textPrimary">210 Mins</span>
+          <div>
+            <div class="bento-card-pricing">
+              <div class="pricing-item">
+                <span class="label font-display">Duration</span>
+                <span class="value">60 Mins</span>
               </div>
-              <div class="text-right">
-                <span class="block text-[10px] uppercase text-textSecondary">Rate</span>
-                <span class="font-semibold text-accentGold text-base">From $290</span>
+              <div class="pricing-item">
+                <span class="label font-display">Rate</span>
+                <span class="value rate">From $95</span>
               </div>
             </div>
-            <button onclick="openBookingModal('Premium Packages')" class="btn-luxury py-2.5 rounded-xl text-[10px] uppercase tracking-luxury font-bold w-full text-center">
-              Select Experience
-            </button>
-          </div>
-          <div class="w-full sm:w-1/2 aspect-square sm:aspect-auto bg-cover bg-center overflow-hidden">
-            <img src="https://images.unsplash.com/photo-1560066984-138dadb4c035?auto=format&fit=crop&w=600&q=80" alt="Luxury Salon Reception" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" />
+            <a href="booking.html?service=Hydra-Facial" class="btn-luxury btn-outline btn-select">Select</a>
           </div>
         </div>
 
+        <!-- Service 4: Hair Spa -->
+        <div class="bento-card double-width glass">
+          <div class="bento-card-img-wrapper">
+            <img src="assets/images/facial_aesthetic.png" alt="Aesthetic treatments">
+          </div>
+          <div class="bento-card-info" style="flex-direction: column;">
+            <div>
+              <span class="card-category font-display">Restoration</span>
+              <h3>Follicular Hair Spa</h3>
+              <p>Deep molecular nourishment, active botanical cellular hydration, scalp micro-circulation stimulation, and steam ritual.</p>
+            </div>
+            <div class="bento-card-pricing">
+              <div class="pricing-item">
+                <span class="label font-display">Duration</span>
+                <span class="value">60 Mins</span>
+              </div>
+              <div class="pricing-item">
+                <span class="label font-display">Rate</span>
+                <span class="value rate">From $110</span>
+              </div>
+              <a href="booking.html?service=Hair Spa" class="btn-luxury btn-primary">Book Now</a>
+            </div>
+          </div>
+        </div>
       </div>
 
+      <div style="text-align: center; margin-top: 4rem;">
+        <a href="services.html" class="btn-luxury btn-outline">View Complete Menu (14 Services)</a>
+      </div>
     </div>
   </section>
 
-  <!-- 6. Why Choose Us (The Logic) -->
-  <section class="py-28 px-4 md:px-8 max-w-7xl mx-auto relative z-10">
-    <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
-      
-      <!-- Left Editorial Headers -->
-      <div class="lg:col-span-5 space-y-6">
-        <p class="text-xs uppercase tracking-superluxury text-accentGold font-semibold">The Standard</p>
-        <h2 class="font-editorial text-4xl md:text-5xl lg:text-6xl text-textPrimary leading-tight">
-          Absolute <br>
-          Grooming Logic.
-        </h2>
-        <div class="w-12 h-[1px] bg-accentGold"></div>
-        <p class="text-xs text-textSecondary leading-relaxed">
-          Luxury is not about excess—it is the elimination of visual flaws. We restrict daily bookings to guarantee our stylists possess full artistic focus for your styling appointment.
-        </p>
+  <!-- Why Choose Us Pillars -->
+  <section class="section-padding" style="position: relative; z-index: 10;">
+    <div class="max-width-container">
+      <div class="editorial-header">
+        <span class="badge font-display">Grooming Logic</span>
+        <h2>Absolute Styling <span>Standards</span></h2>
+        <div class="divider"></div>
       </div>
 
-      <!-- Right Pillars Grid -->
-      <div class="lg:col-span-7 grid grid-cols-1 sm:grid-cols-2 gap-6" id="why-choose-us-pillars">
-        
-        <!-- Pillar 1 -->
-        <div class="p-6 glass border border-borderTheme rounded-2xl space-y-3 shadow-md hover:border-accentGold transition-all">
-          <span class="text-xs text-accentGold font-bold uppercase tracking-wider">01. Master Stylists</span>
-          <h4 class="text-sm font-bold text-textPrimary font-display uppercase">London Trained</h4>
-          <p class="text-[11px] text-textSecondary leading-relaxed">Our staff undergoes quarterly styling refinement at top British and Italian styling academies.</p>
+      <div class="pillars-grid">
+        <div class="pillar-card glass">
+          <span class="node-number font-display">01</span>
+          <h4>London Trained</h4>
+          <p>Our staff undergoes quarterly styling refinement at top British and Italian styling academies.</p>
         </div>
-
-        <!-- Pillar 2 -->
-        <div class="p-6 glass border border-borderTheme rounded-2xl space-y-3 shadow-md hover:border-accentGold transition-all">
-          <span class="text-xs text-accentGold font-bold uppercase tracking-wider">02. Premium Products</span>
-          <h4 class="text-sm font-bold text-textPrimary font-display uppercase">Apothecary Quality</h4>
-          <p class="text-[11px] text-textSecondary leading-relaxed">We exclusively curate organic, paraben-free active botanical skin and hair tonics.</p>
+        <div class="pillar-card glass">
+          <span class="node-number font-display">02</span>
+          <h4>Apothecary Quality</h4>
+          <p>We exclusively formulate and curates organic, paraben-free active botanical hair and skin serums.</p>
         </div>
-
-        <!-- Pillar 3 -->
-        <div class="p-6 glass border border-borderTheme rounded-2xl space-y-3 shadow-md hover:border-accentGold transition-all">
-          <span class="text-xs text-accentGold font-bold uppercase tracking-wider">03. Sterile Safety</span>
-          <h4 class="text-sm font-bold text-textPrimary font-display uppercase">Autoclave Clean</h4>
-          <p class="text-[11px] text-textSecondary leading-relaxed">Every individual scissor, clipper, and grooming razor undergoes medical-grade autoclave sterilization.</p>
+        <div class="pillar-card glass">
+          <span class="node-number font-display">03</span>
+          <h4>Autoclave Sterile</h4>
+          <p>Every individual styling scissor, clipper, and grooming razor undergoes medical-grade autoclave sterilization.</p>
         </div>
-
-        <!-- Pillar 4 -->
-        <div class="p-6 glass border border-borderTheme rounded-2xl space-y-3 shadow-md hover:border-accentGold transition-all">
-          <span class="text-xs text-accentGold font-bold uppercase tracking-wider">04. Private Lounge</span>
-          <h4 class="text-sm font-bold text-textPrimary font-display uppercase">Quiet Exclusivity</h4>
-          <p class="text-[11px] text-textSecondary leading-relaxed">Relax with customized single-origin coffee or fine beverages in our quiet, high-status waiting area.</p>
+        <div class="pillar-card glass">
+          <span class="node-number font-display">04</span>
+          <h4>Private Lounge</h4>
+          <p>Relax with single-origin pour overs or premium liquors in our quiet, high-status client lobby.</p>
         </div>
-
       </div>
-
     </div>
   </section>
 
-  <!-- 7. Before / After Section (The Transformation) -->
-  <section class="py-28 bg-bgSecondary border-y border-borderTheme relative z-10 transition-colors duration-500">
-    <div class="max-w-4xl mx-auto px-4 text-center space-y-12">
-      
-      <div class="space-y-4">
-        <p class="text-xs uppercase tracking-superluxury text-accentGold font-semibold">Transformations</p>
-        <h2 class="font-editorial text-4xl md:text-5xl text-textPrimary leading-tight">
-          Visual Evidence
-        </h2>
-        <div class="w-12 h-[1px] bg-accentGold mx-auto"></div>
+  <!-- Testimonials Section -->
+  <section class="section-padding" style="background-color: var(--bg-secondary); position: relative; z-index: 10;">
+    <div class="max-width-container">
+      <div class="editorial-header">
+        <span class="badge font-display">Client Reviews</span>
+        <h2>Verified <span>Prestige</span></h2>
+        <div class="divider"></div>
       </div>
 
-      <!-- Drag Split Comparison Container -->
-      <div class="before-after-container aspect-[16/10] relative max-w-2xl mx-auto" id="comparison-slider">
-        <!-- Before layer (Static Background) -->
-        <img class="before-img" src="https://images.unsplash.com/photo-1562322140-8baeececf3df?auto=format&fit=crop&w=800&q=80" alt="Styling Before" />
-        
-        <!-- After layer (Dynamic Width container) -->
-        <div class="after-img-container" id="slider-after-container">
-          <img class="after-img" src="https://images.unsplash.com/photo-1595476108010-b4d1f102b1b1?auto=format&fit=crop&w=800&q=80" alt="Styling After" style="width: 672px; max-width: none;" id="slider-after-img" />
-          <span class="absolute top-4 left-6 bg-[#060608]/75 text-accentGold text-[9px] font-bold tracking-widest px-2.5 py-1 rounded">BEFORE</span>
-        </div>
+      <div class="testimonials-slider-container">
+        <div class="swiper testimonialSwiper">
+          <div class="swiper-wrapper">
+            <!-- Slide 1 -->
+            <div class="swiper-slide testimonial-card glass">
+              <div class="testimonial-stars">★★★★★</div>
+              <blockquote class="testimonial-quote">
+                "Alexander Mercer’s scissor work is geometric perfection. My style reflects both my professional visual posture and my daily convenience needs. Easily Mayfair’s finest."
+              </blockquote>
+              <div class="testimonial-author">
+                <div class="author-avatar flex-center font-display">JM</div>
+                <div class="author-meta">
+                  <h4>Julian Mercer</h4>
+                  <p class="font-display">Venture Partner</p>
+                </div>
+              </div>
+            </div>
 
-        <!-- Floating Labels -->
-        <span class="absolute top-4 right-6 bg-[#060608]/75 text-accentGold text-[9px] font-bold tracking-widest px-2.5 py-1 rounded z-10">AFTER</span>
+            <!-- Slide 2 -->
+            <div class="swiper-slide testimonial-card glass">
+              <div class="testimonial-stars">★★★★★</div>
+              <blockquote class="testimonial-quote">
+                "The straight shave at Chandan is pure restoration. The hot lavender towel wraps and custom apothecaries convert regular grooming into a wellness ritual."
+              </blockquote>
+              <div class="testimonial-author">
+                <div class="author-avatar flex-center font-display">DS</div>
+                <div class="author-meta">
+                  <h4>David Sterling</h4>
+                  <p class="font-display">Architectural Director</p>
+                </div>
+              </div>
+            </div>
 
-        <!-- Drag handle slider -->
-        <div class="slider-handle" id="slider-drag-handle">
-          <div class="slider-button">
-            ◄ ►
-          </div>
-        </div>
-      </div>
-
-    </div>
-  </section>
-
-  <!-- 8. Our Team (The Experts) -->
-  <section id="specialists" class="py-28 px-4 md:px-8 max-w-7xl mx-auto relative z-10">
-    <div class="text-center max-w-2xl mx-auto mb-20 space-y-4">
-      <p class="text-xs uppercase tracking-superluxury text-accentGold font-semibold">The Artisans</p>
-      <h2 class="font-editorial text-4xl md:text-5xl lg:text-6xl text-textPrimary leading-tight">
-        Master Stylists
-      </h2>
-      <div class="w-12 h-[1px] bg-accentGold mx-auto mt-4"></div>
-    </div>
-
-    <!-- Stylist Profile Cards Grid -->
-    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-      
-      <!-- Specialist 1 -->
-      <div class="glass border border-borderTheme rounded-2xl overflow-hidden shadow-lg hover:border-accentGold transition-all duration-500 group flex flex-col justify-between">
-        <div>
-          <!-- Photo Container -->
-          <div class="aspect-[4/5] bg-bgSecondary overflow-hidden relative">
-            <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=600&q=80" alt="Alexander Mercer Art Director" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-750" />
-            <span class="absolute top-4 left-4 text-[9px] font-bold uppercase tracking-wider px-3 py-1 rounded-full bg-accentGold text-black font-display">
-              ART DIRECTOR
-            </span>
-          </div>
-          <div class="p-6 md:p-8 space-y-3">
-            <h3 class="font-editorial text-2xl text-textPrimary">Alexander Mercer</h3>
-            <p class="text-xs text-textSecondary">14+ Years experience. Specialized in couture cuts and classic geometry.</p>
-          </div>
-        </div>
-        <div class="p-6 md:p-8 pt-0 flex items-center justify-between border-t border-borderTheme/50 mt-4">
-          <span class="text-[10px] text-textSecondary uppercase tracking-widest font-semibold">London Atelier</span>
-          <button onclick="openBookingModal('Hair Cut')" class="text-xs text-accentGold hover:underline font-bold uppercase tracking-widest">Book Alex</button>
-        </div>
-      </div>
-
-      <!-- Specialist 2 -->
-      <div class="glass border border-borderTheme rounded-2xl overflow-hidden shadow-lg hover:border-accentGold transition-all duration-500 group flex flex-col justify-between">
-        <div>
-          <div class="aspect-[4/5] bg-bgSecondary overflow-hidden relative">
-            <img src="https://images.unsplash.com/photo-1580489944761-15a19d654956?auto=format&fit=crop&w=600&q=80" alt="Sophia Loren Skin Specialist" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-750" />
-            <span class="absolute top-4 left-4 text-[9px] font-bold uppercase tracking-wider px-3 py-1 rounded-full bg-accentGold text-black font-display">
-              SKIN AESTHETICIAN
-            </span>
-          </div>
-          <div class="p-6 md:p-8 space-y-3">
-            <h3 class="font-editorial text-2xl text-textPrimary">Sophia Loren</h3>
-            <p class="text-xs text-textSecondary">10+ Years experience. Specialized in multi-peptide hydration facials and skin peels.</p>
-          </div>
-        </div>
-        <div class="p-6 md:p-8 pt-0 flex items-center justify-between border-t border-borderTheme/50 mt-4">
-          <span class="text-[10px] text-textSecondary uppercase tracking-widest font-semibold">Milan Atelier</span>
-          <button onclick="openBookingModal('Facial')" class="text-xs text-accentGold hover:underline font-bold uppercase tracking-widest">Book Sophia</button>
-        </div>
-      </div>
-
-      <!-- Specialist 3 -->
-      <div class="glass border border-borderTheme rounded-2xl overflow-hidden shadow-lg hover:border-accentGold transition-all duration-500 group flex flex-col justify-between">
-        <div>
-          <div class="aspect-[4/5] bg-bgSecondary overflow-hidden relative">
-            <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=600&q=80" alt="Marcus Aurelius Barber Director" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-750" />
-            <span class="absolute top-4 left-4 text-[9px] font-bold uppercase tracking-wider px-3 py-1 rounded-full bg-accentGold text-black font-display">
-              SENIOR GROOMER
-            </span>
-          </div>
-          <div class="p-6 md:p-8 space-y-3">
-            <h3 class="font-editorial text-2xl text-textPrimary">Marcus Aurelius</h3>
-            <p class="text-xs text-textSecondary">8+ Years experience. Specialized in traditional hot towel shaves and beard design.</p>
-          </div>
-        </div>
-        <div class="p-6 md:p-8 pt-0 flex items-center justify-between border-t border-borderTheme/50 mt-4">
-          <span class="text-[10px] text-textSecondary uppercase tracking-widest font-semibold">Rome Atelier</span>
-          <button onclick="openBookingModal('Beard Styling')" class="text-xs text-accentGold hover:underline font-bold uppercase tracking-widest">Book Marcus</button>
-        </div>
-      </div>
-
-    </div>
-  </section>
-
-  <!-- 9. Gallery Section (Filterable Masonry Portfolio) -->
-  <section id="gallery" class="py-28 bg-bgSecondary border-y border-borderTheme relative z-10 transition-colors duration-500">
-    <div class="max-w-7xl mx-auto px-4 md:px-8 space-y-12">
-      
-      <!-- Section Headers -->
-      <div class="text-center space-y-4">
-        <p class="text-xs uppercase tracking-superluxury text-accentGold font-semibold">Atelier Portfolio</p>
-        <h2 class="font-editorial text-4xl md:text-5xl text-textPrimary leading-tight">
-          Visual Showcase
-        </h2>
-        <div class="w-12 h-[1px] bg-accentGold mx-auto"></div>
-      </div>
-
-      <!-- Filter Controls -->
-      <div class="flex flex-wrap justify-center gap-4 text-[10px] tracking-luxury uppercase font-semibold text-textSecondary" id="gallery-filters">
-        <button class="px-5 py-2 border border-accentGold text-accentGold rounded-full filter-btn active" data-filter="all">All Portfolio</button>
-        <button class="px-5 py-2 border border-borderTheme rounded-full filter-btn hover:border-accentGold hover:text-textPrimary transition-all" data-filter="cuts">Couture Cuts</button>
-        <button class="px-5 py-2 border border-borderTheme rounded-full filter-btn hover:border-accentGold hover:text-textPrimary transition-all" data-filter="styling">Styling</button>
-        <button class="px-5 py-2 border border-borderTheme rounded-full filter-btn hover:border-accentGold hover:text-textPrimary transition-all" data-filter="facials">Facials</button>
-        <button class="px-5 py-2 border border-borderTheme rounded-full filter-btn hover:border-accentGold hover:text-textPrimary transition-all" data-filter="makeup">Makeup</button>
-      </div>
-
-      <!-- Masonry Grid -->
-      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6" id="portfolio-masonry">
-        
-        <!-- Item 1 -->
-        <div class="portfolio-item cuts overflow-hidden rounded-2xl border border-borderTheme aspect-[3/4] bg-bgPrimary relative group cursor-pointer" onclick="openLightbox('https://images.unsplash.com/photo-1503951914875-452162b0f3f1?auto=format&fit=crop&w=800&q=80')">
-          <img src="https://images.unsplash.com/photo-1503951914875-452162b0f3f1?auto=format&fit=crop&w=600&q=80" alt="Couture Haircut" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
-          <div class="absolute inset-0 bg-[#060608]/75 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-6">
-            <span class="text-[9px] uppercase tracking-wider text-accentGold font-bold">Hair Cut</span>
-            <h4 class="text-sm font-bold text-white uppercase mt-1">Knightsbridge Crop</h4>
-          </div>
-        </div>
-
-        <!-- Item 2 -->
-        <div class="portfolio-item styling overflow-hidden rounded-2xl border border-borderTheme aspect-[1/1] bg-bgPrimary relative group cursor-pointer" onclick="openLightbox('https://images.unsplash.com/photo-1560066984-138dadb4c035?auto=format&fit=crop&w=800&q=80')">
-          <img src="https://images.unsplash.com/photo-1560066984-138dadb4c035?auto=format&fit=crop&w=600&q=80" alt="Luxury styling interior" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
-          <div class="absolute inset-0 bg-[#060608]/75 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-6">
-            <span class="text-[9px] uppercase tracking-wider text-accentGold font-bold">Styling</span>
-            <h4 class="text-sm font-bold text-white uppercase mt-1">Mayfair Blowdry</h4>
-          </div>
-        </div>
-
-        <!-- Item 3 -->
-        <div class="portfolio-item facials overflow-hidden rounded-2xl border border-borderTheme aspect-[3/4] bg-bgPrimary relative group cursor-pointer" onclick="openLightbox('https://images.unsplash.com/photo-1616394584738-fc6e612e71b9?auto=format&fit=crop&w=800&q=80')">
-          <img src="https://images.unsplash.com/photo-1616394584738-fc6e612e71b9?auto=format&fit=crop&w=600&q=80" alt="Facial treatment skin care" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
-          <div class="absolute inset-0 bg-[#060608]/75 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-6">
-            <span class="text-[9px] uppercase tracking-wider text-accentGold font-bold">Facials</span>
-            <h4 class="text-sm font-bold text-white uppercase mt-1">Gold Leaf Facial</h4>
-          </div>
-        </div>
-
-        <!-- Item 4 -->
-        <div class="portfolio-item makeup overflow-hidden rounded-2xl border border-borderTheme aspect-[4/5] bg-bgPrimary relative group cursor-pointer" onclick="openLightbox('https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?auto=format&fit=crop&w=800&q=80')">
-          <img src="https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?auto=format&fit=crop&w=600&q=80" alt="Bridal makeup skin glow" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
-          <div class="absolute inset-0 bg-[#060608]/75 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-6">
-            <span class="text-[9px] uppercase tracking-wider text-accentGold font-bold">Makeup</span>
-            <h4 class="text-sm font-bold text-white uppercase mt-1">Editorial Glow</h4>
-          </div>
-        </div>
-
-      </div>
-
-    </div>
-  </section>
-
-  <!-- 10. Video transformations Section -->
-  <section class="py-28 px-4 md:px-8 max-w-7xl mx-auto relative z-10">
-    <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
-      
-      <!-- Video Text Headers -->
-      <div class="lg:col-span-5 space-y-6">
-        <p class="text-xs uppercase tracking-superluxury text-accentGold font-semibold">Transformations</p>
-        <h2 class="font-editorial text-4xl md:text-5xl lg:text-6xl text-textPrimary leading-tight">
-          Cinematic Reveals
-        </h2>
-        <div class="w-12 h-[1px] bg-accentGold"></div>
-        <p class="text-xs text-textSecondary leading-relaxed">
-          Watch hair styling architecture in action. Our video transformations showcase structural changes and the bespoke consultation alignment that precedes every luxury ritual cut.
-        </p>
-      </div>
-
-      <!-- Video Embed Placeholder -->
-      <div class="lg:col-span-7 rounded-2xl border border-borderTheme overflow-hidden aspect-video bg-[#060608] shadow-2xl relative group">
-        <!-- Static high-end barber interior image acting as play screen -->
-        <img src="https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?auto=format&fit=crop&w=1200&q=80" alt="Luxury Salon styling session preview" class="w-full h-full object-cover" />
-        <div class="absolute inset-0 bg-black/40 flex items-center justify-center">
-          <button onclick="playAtelierVideo()" class="w-16 h-16 rounded-full border-2 border-accentGold flex items-center justify-center text-accentGold bg-[#060608]/75 backdrop-blur-sm hover:scale-110 transition-transform shadow-lg" aria-label="Play Transformation Video">
-            Play Video
-          </button>
-        </div>
-      </div>
-
-    </div>
-  </section>
-
-  <!-- 11. Cinematic Testimonials (The Validation) -->
-  <section id="testimonials" class="py-28 bg-bgSecondary border-y border-borderTheme relative z-10 transition-colors duration-500">
-    <div class="max-w-7xl mx-auto px-4 md:px-8 space-y-12">
-      
-      <!-- Section Headers -->
-      <div class="text-center space-y-4">
-        <p class="text-xs uppercase tracking-superluxury text-accentGold font-semibold">Client Reviews</p>
-        <h2 class="font-editorial text-4xl md:text-5xl text-textPrimary leading-tight">
-          Verified Prestige
-        </h2>
-        <div class="w-12 h-[1px] bg-accentGold mx-auto"></div>
-      </div>
-
-      <!-- Swiper Slider Container -->
-      <div class="swiper testimonialSwiper max-w-4xl mx-auto py-8">
-        <div class="swiper-wrapper">
-          
-          <!-- Slide 1 -->
-          <div class="swiper-slide glass p-8 md:p-12 rounded-2xl border border-borderTheme space-y-6 shadow-lg">
-            <div class="flex items-center gap-1.5 text-accentGold text-sm">★★★★★</div>
-            <blockquote class="font-cormorant italic text-lg md:text-xl text-textPrimary leading-relaxed">
-              "Alexander Mercer’s scissor work is geometric perfection. My style reflects both my professional visual posture and my daily convenience needs. Easily Mayfair’s finest."
-            </blockquote>
-            <div class="flex items-center gap-4">
-              <div class="w-10 h-10 rounded-full bg-accentGold/10 flex items-center justify-center font-bold text-xs text-accentGold">JM</div>
-              <div>
-                <h4 class="text-xs font-bold text-textPrimary uppercase">Julian Mercer</h4>
-                <p class="text-[9px] uppercase tracking-wider text-textSecondary font-semibold">Venture Partner</p>
+            <!-- Slide 3 -->
+            <div class="swiper-slide testimonial-card glass">
+              <div class="testimonial-stars">★★★★★</div>
+              <blockquote class="testimonial-quote">
+                "Finding a skincare atelier that understands the specific needs of executive schedules is rare. Sophia Loren's multi-peptide facials are transformative."
+              </blockquote>
+              <div class="testimonial-author">
+                <div class="author-avatar flex-center font-display">EA</div>
+                <div class="author-meta">
+                  <h4>Elizabeth Avery</h4>
+                  <p class="font-display">Creative Director</p>
+                </div>
               </div>
             </div>
           </div>
-
-          <!-- Slide 2 -->
-          <div class="swiper-slide glass p-8 md:p-12 rounded-2xl border border-borderTheme space-y-6 shadow-lg">
-            <div class="flex items-center gap-1.5 text-accentGold text-sm">★★★★★</div>
-            <blockquote class="font-cormorant italic text-lg md:text-xl text-textPrimary leading-relaxed">
-              "The straight shave at Chandan is pure restoration. The hot lavender towel wraps and custom apothecaries convert regular grooming into a wellness ritual."
-            </blockquote>
-            <div class="flex items-center gap-4">
-              <div class="w-10 h-10 rounded-full bg-accentGold/10 flex items-center justify-center font-bold text-xs text-accentGold">DR</div>
-              <div>
-                <h4 class="text-xs font-bold text-textPrimary uppercase">David Sterling</h4>
-                <p class="text-[9px] uppercase tracking-wider text-textSecondary font-semibold">Architectural Director</p>
-              </div>
-            </div>
-          </div>
-
+          <!-- Pagination -->
+          <div class="swiper-pagination"></div>
         </div>
-        <!-- Swiper Pagination -->
-        <div class="swiper-pagination mt-8"></div>
       </div>
-
     </div>
   </section>
 
-  <!-- 12. Special Offers (Pricing Cards) -->
-  <section id="pricing" class="py-28 px-4 md:px-8 max-w-7xl mx-auto relative z-10">
-    <div class="text-center max-w-2xl mx-auto mb-20 space-y-4">
-      <p class="text-xs uppercase tracking-superluxury text-accentGold font-semibold">Atelier Packages</p>
-      <h2 class="font-editorial text-4xl md:text-5xl lg:text-6xl text-textPrimary leading-tight">
-        Private Subscriptions
-      </h2>
-      <div class="w-12 h-[1px] bg-accentGold mx-auto mt-4"></div>
-    </div>
-
-    <!-- 3-Column Pricing Layout -->
-    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-      
-      <!-- Tier 1 -->
-      <div class="glass border border-borderTheme rounded-2xl p-8 flex flex-col justify-between space-y-8 hover:border-accentGold transition-all duration-500">
-        <div class="space-y-4">
-          <span class="text-[9px] uppercase tracking-luxury text-textSecondary">Atelier Entry</span>
-          <h3 class="font-editorial text-2xl text-textPrimary">Essential Member</h3>
-          <p class="text-xs text-textSecondary">Curated monthly grooming maintenance.</p>
-          <div class="font-editorial text-4xl text-accentGold pt-4">$120 <span class="text-xs text-textSecondary">/ Month</span></div>
-          <ul class="space-y-3 text-xs pt-4 text-textSecondary">
-            <li class="flex items-center gap-2">✓ Executive Haircut & Style</li>
-            <li class="flex items-center gap-2">✓ Single Beard Lineup</li>
-            <li class="flex items-center gap-2">✓ Scalp Wash & Beverage Service</li>
-          </ul>
-        </div>
-        <button onclick="openBookingModal('Essential Member')" class="w-full py-3 rounded-xl border border-borderTheme text-xs uppercase tracking-luxury text-center hover:bg-accentGold hover:text-black transition-all">
-          Reserve Membership
-        </button>
-      </div>
-
-      <!-- Tier 2: Popular -->
-      <div class="glass border border-accentGold/50 bg-[#121216]/50 rounded-2xl p-8 flex flex-col justify-between space-y-8 relative scale-105 shadow-xl hover:border-accentGold transition-all duration-500">
-        <span class="absolute top-[-12px] left-1/2 transform -translate-x-1/2 bg-accentGold text-black font-display font-bold text-[9px] px-4 py-1.5 rounded-full uppercase tracking-wider">
-          MOST RESERVED
-        </span>
-        <div class="space-y-4">
-          <span class="text-[9px] uppercase tracking-luxury text-textSecondary">Executive Suite</span>
-          <h3 class="font-editorial text-2xl text-textPrimary">Elite Executive</h3>
-          <p class="text-xs text-textSecondary">Complete grooming alignment and face therapies.</p>
-          <div class="font-editorial text-4xl text-accentGold pt-4">$220 <span class="text-xs text-textSecondary">/ Month</span></div>
-          <ul class="space-y-3 text-xs pt-4 text-textSecondary">
-            <li class="flex items-center gap-2 text-textPrimary">✓ Unlimited Haircuts & Styling</li>
-            <li class="flex items-center gap-2 text-textPrimary">✓ Royal Hot Towel Straight Shaves</li>
-            <li class="flex items-center gap-2 text-textPrimary">✓ Express Hydra-Facial Treatments</li>
-            <li class="flex items-center gap-2 text-textPrimary">✓ Private lounge booking access</li>
-          </ul>
-        </div>
-        <button onclick="openBookingModal('Elite Executive')" class="btn-luxury w-full py-3.5 rounded-xl text-xs uppercase tracking-luxury text-center">
-          Reserve Membership
-        </button>
-      </div>
-
-      <!-- Tier 3 -->
-      <div class="glass border border-borderTheme rounded-2xl p-8 flex flex-col justify-between space-y-8 hover:border-accentGold transition-all duration-500">
-        <div class="space-y-4">
-          <span class="text-[9px] uppercase tracking-luxury text-textSecondary">Complete Exclusivity</span>
-          <h3 class="font-editorial text-2xl text-textPrimary">Bespoke Patron</h3>
-          <p class="text-xs text-textSecondary">Custom aesthetic coordination package.</p>
-          <div class="font-editorial text-4xl text-accentGold pt-4">$450 <span class="text-xs text-textSecondary">/ Month</span></div>
-          <ul class="space-y-3 text-xs pt-4 text-textSecondary">
-            <li class="flex items-center gap-2">✓ Hair, Beard & Facials on priority</li>
-            <li class="flex items-center gap-2">✓ Monthly skin peels & cellular therapy</li>
-            <li class="flex items-center gap-2">✓ Dedicated master stylist assigned</li>
-            <li class="flex items-center gap-2">✓ Private airport transfer alignments</li>
-          </ul>
-        </div>
-        <button onclick="openBookingModal('Bespoke Patron')" class="w-full py-3 rounded-xl border border-borderTheme text-xs uppercase tracking-luxury text-center hover:bg-accentGold hover:text-black transition-all">
-          Reserve Membership
-        </button>
-      </div>
-
-    </div>
-  </section>
-
-  <!-- 13. FAQ Section (Accordion) -->
-  <section id="faq" class="py-28 bg-bgSecondary border-y border-borderTheme relative z-10 transition-colors duration-500">
-    <div class="max-w-3xl mx-auto px-4 space-y-12">
-      
-      <!-- Section Headers -->
-      <div class="text-center space-y-4">
-        <p class="text-xs uppercase tracking-superluxury text-accentGold font-semibold">Atelier Policy</p>
-        <h2 class="font-editorial text-4xl md:text-5xl text-textPrimary leading-tight">
-          FAQ Accordion
-        </h2>
-        <div class="w-12 h-[1px] bg-accentGold mx-auto"></div>
-      </div>
-
-      <!-- Accordion Grid -->
-      <div class="space-y-4">
-        
-        <!-- Accordion 1 -->
-        <div class="accordion-item border border-borderTheme rounded-xl overflow-hidden glass transition-colors duration-300">
-          <button class="w-full p-6 text-left flex justify-between items-center font-display text-xs uppercase tracking-wider text-textPrimary focus:outline-none" onclick="toggleAccordion(this)">
-            <span>Do you accept walk-ins?</span>
-            <span class="accordion-icon text-accentGold text-base">+</span>
-          </button>
-          <div class="accordion-content px-6 pb-6 text-xs text-textSecondary leading-relaxed">
-            To ensure absolute privacy and dedication to detail, we operate on a reservation-only basis. Walk-ins are subject to stylist slot availability.
-          </div>
-        </div>
-
-        <!-- Accordion 2 -->
-        <div class="accordion-item border border-borderTheme rounded-xl overflow-hidden glass transition-colors duration-300">
-          <button class="w-full p-6 text-left flex justify-between items-center font-display text-xs uppercase tracking-wider text-textPrimary focus:outline-none" onclick="toggleAccordion(this)">
-            <span>What organic products do you formulate with?</span>
-            <span class="accordion-icon text-accentGold text-base">+</span>
-          </button>
-          <div class="accordion-content px-6 pb-6 text-xs text-textSecondary leading-relaxed">
-            We formulate our treatments with exclusively organic sulfate-free hair tonics, pure botanicals, and small-batch skin serums.
-          </div>
-        </div>
-
-        <!-- Accordion 3 -->
-        <div class="accordion-item border border-borderTheme rounded-xl overflow-hidden glass transition-colors duration-300">
-          <button class="w-full p-6 text-left flex justify-between items-center font-display text-xs uppercase tracking-wider text-textPrimary focus:outline-none" onclick="toggleAccordion(this)">
-            <span>What is your cancellation policy?</span>
-            <span class="accordion-icon text-accentGold text-base">+</span>
-          </button>
-          <div class="accordion-content px-6 pb-6 text-xs text-textSecondary leading-relaxed">
-            We require 24 hours notice for cancellation or modifications to appointments, allowing us to offer the slot to our waitlisted clients.
-          </div>
-        </div>
-
-      </div>
-
-    </div>
-  </section>
-
-  <!-- 14. Contact & Interactive Leaflet Map Section -->
-  <section id="contact" class="py-28 px-4 md:px-8 max-w-7xl mx-auto relative z-10">
-    <div class="grid grid-cols-1 lg:grid-cols-12 gap-12">
-      
-      <!-- Contact details -->
-      <div class="lg:col-span-5 space-y-8">
-        <div class="space-y-4">
-          <p class="text-xs uppercase tracking-superluxury text-accentGold font-semibold">Atelier Mayfair</p>
-          <h2 class="font-editorial text-4xl md:text-5xl text-textPrimary leading-tight">
-            Directions & Atelier
-          </h2>
-          <div class="w-12 h-[1px] bg-accentGold"></div>
-        </div>
-
-        <div class="space-y-6 text-xs text-textSecondary">
-          <div class="space-y-1">
-            <h4 class="font-bold text-textPrimary uppercase">ATELIER ADRESS</h4>
-            <p>104 Mayfair Promenade, Suite C, London, W1J 8HQ</p>
-          </div>
-          <div class="space-y-1">
-            <h4 class="font-bold text-textPrimary uppercase">RESERVATIONS</h4>
-            <p>Phone: +44 (0) 20 7946 0122</p>
-            <p>WhatsApp: +44 7911 123456</p>
-            <p>Email: appointments@chandansalon.com</p>
-          </div>
-          <div class="space-y-1">
-            <h4 class="font-bold text-textPrimary uppercase">WORKING HOURS</h4>
-            <p>Mon - Fri: 10:00 - 20:00</p>
-            <p>Sat: 09:00 - 18:00</p>
-            <p class="text-accentGold font-bold">Sun: Closed (Private Bookings Only)</p>
-          </div>
-        </div>
-
-        <div class="flex flex-wrap gap-4 pt-4">
-          <a href="https://wa.me/447911123456" target="_blank" class="border border-borderTheme hover:border-accentGold bg-[#121216]/40 text-textPrimary text-xs font-semibold tracking-luxury uppercase px-6 py-3 rounded-full flex items-center gap-2">
-            WhatsApp Salon
-          </a>
-          <button onclick="openBookingModal()" class="btn-luxury px-6 py-3 rounded-full text-xs font-semibold tracking-luxury uppercase">
-            Book Absolute Experience
-          </button>
-        </div>
-      </div>
-
-      <!-- Map Container -->
-      <div class="lg:col-span-7 rounded-2xl overflow-hidden min-h-[350px] lg:min-h-[450px] border border-borderTheme bg-[#121216] relative shadow-2xl z-0" id="contact-map">
-        <!-- Interactive Leaflet map container -->
-      </div>
-
-    </div>
-  </section>
-
-  <!-- 15. Massive Luxury Footer -->
-  <footer class="bg-[#121216] border-t border-borderTheme relative z-10 transition-colors duration-500">
-    <div class="max-w-7xl mx-auto px-4 md:px-8 py-20 space-y-16">
-      
-      <!-- Footer Columns -->
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
-        
-        <!-- Brand Segment -->
-        <div class="space-y-6">
-          <span class="font-editorial text-2xl font-semibold tracking-superluxury text-textPrimary">CHANDAN</span>
-          <p class="text-xs text-textSecondary leading-relaxed">
-            Curating visual standards and tailored hair geometry inside Mayfair since 2012. We reject compromising trends.
-          </p>
-          <!-- Social Icons -->
-          <div class="flex items-center gap-4 text-textSecondary">
-            <a href="#" class="hover:text-accentGold transition-colors" aria-label="Instagram">
-              Instagram
-            </a>
-            <span class="w-[1px] h-3 bg-borderTheme"></span>
-            <a href="#" class="hover:text-accentGold transition-colors" aria-label="Pinterest">
-              Pinterest
-            </a>
+  <!-- Massive Luxury Footer -->
+  <footer class="luxury-footer">
+    <div class="max-width-container">
+      <div class="footer-grid">
+        <!-- Brand Info -->
+        <div class="footer-brand-col">
+          <div class="brand">CHANDAN<span>.</span></div>
+          <p>Curating visual standards and tailored hair geometry inside Mayfair since 2012. We reject compromising trends.</p>
+          <div class="footer-socials font-display">
+            <a href="#">Instagram</a>
+            <span class="divider"></span>
+            <a href="#">Pinterest</a>
           </div>
         </div>
 
         <!-- Directory Links -->
-        <div class="space-y-4">
-          <h4 class="text-[10px] uppercase tracking-luxury text-textPrimary font-bold">Atelier Menu</h4>
-          <ul class="space-y-2.5 text-xs text-textSecondary">
-            <li><a href="#about" class="hover:text-accentGold transition-colors">Our Philosophy</a></li>
-            <li><a href="#services" class="hover:text-accentGold transition-colors">Services Directory</a></li>
-            <li><a href="#specialists" class="hover:text-accentGold transition-colors">Master Stylists</a></li>
-            <li><a href="#pricing" class="hover:text-accentGold transition-colors">Subscriptions</a></li>
+        <div class="footer-links-col">
+          <h4 class="font-display">Atelier Directory</h4>
+          <ul>
+            <li><a href="about.html">Our Philosophy</a></li>
+            <li><a href="services.html">Curated Services</a></li>
+            <li><a href="specialists.html">Master Stylists</a></li>
+            <li><a href="gallery.html">Transformation Portfolio</a></li>
+            <li><a href="booking.html">Schedule Reserve</a></li>
+            <li><a href="contact.html">Directions & Map</a></li>
           </ul>
         </div>
 
-        <!-- Services Short Directory -->
-        <div class="space-y-4">
-          <h4 class="text-[10px] uppercase tracking-luxury text-textPrimary font-bold">Signature Services</h4>
-          <ul class="space-y-2.5 text-xs text-textSecondary">
-            <li><a href="#services" class="hover:text-accentGold transition-colors">Executive Cut & Style</a></li>
-            <li><a href="#services" class="hover:text-accentGold transition-colors">Balayage & Tint</a></li>
-            <li><a href="#services" class="hover:text-accentGold transition-colors">Royal Hot Shave</a></li>
-            <li><a href="#services" class="hover:text-accentGold transition-colors">Hydra-Facial Therapy</a></li>
+        <!-- Signature Services Directory -->
+        <div class="footer-links-col">
+          <h4 class="font-display">Signature Menus</h4>
+          <ul>
+            <li><a href="services.html">Executive Haircut</a></li>
+            <li><a href="services.html">Beard Styling & Trim</a></li>
+            <li><a href="services.html">Follicular Hair Spa</a></li>
+            <li><a href="services.html">Hydra-Facial Skincare</a></li>
+            <li><a href="services.html">Bespoke Bridal Rituals</a></li>
+            <li><a href="services.html">Private Subscriptions</a></li>
           </ul>
         </div>
 
-        <!-- Newsletter Subscription -->
-        <div class="space-y-4">
-          <h4 class="text-[10px] uppercase tracking-luxury text-textPrimary font-bold">Newsletter</h4>
-          <p class="text-xs text-textSecondary leading-relaxed">Subscribe to secure updates on waitlists and exclusive packages.</p>
-          <form onsubmit="subscribeNewsletter(event)" class="flex gap-2">
-            <input required type="email" class="w-full bg-[#060608] border border-borderTheme focus:border-accentGold rounded-lg px-4 py-2 text-xs text-textPrimary focus:outline-none transition-colors" placeholder="Email address">
-            <button type="submit" class="px-4 py-2 bg-accentGold text-black text-xs font-bold rounded-lg hover:bg-white transition-colors">➔</button>
+        <!-- Newsletter Sign-up -->
+        <div class="footer-newsletter-col">
+          <h4 class="font-display">Inner Circle</h4>
+          <p>Subscribe to secure alerts on specialist calendar releases and private waitlist availabilities.</p>
+          <form class="newsletter-form">
+            <input required type="email" placeholder="Email address" aria-label="Email address">
+            <button type="submit" aria-label="Subscribe">➔</button>
           </form>
         </div>
-
       </div>
 
-      <!-- Footer Bottom -->
-      <div class="border-t border-borderTheme pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-[10px] text-textSecondary uppercase tracking-widest">
+      <div class="footer-bottom">
         <span>© 2026 Chandan Salon. All Rights Reserved.</span>
-        
-        <!-- Back to Top Button -->
-        <button onclick="scrollToTop()" class="flex items-center gap-1 hover:text-accentGold transition-colors group">
-          Back to Top 
-          <span class="inline-block transform group-hover:-translate-y-1 transition-transform">↑</span>
+        <button class="back-to-top" onclick="window.scrollTo({top:0, behavior:'smooth'})" aria-label="Scroll to top">
+          Back to Top <span style="transform: rotate(-90deg); display: inline-block; font-weight: 700; margin-left: 2px;">➔</span>
         </button>
       </div>
-
     </div>
   </footer>
 
-  <!-- Lightbox Gallery Modal -->
-  <div id="lightbox-modal" class="fixed inset-0 bg-[#060608]/95 z-[100] backdrop-blur-md flex items-center justify-center opacity-0 pointer-events-none transition-all duration-300" onclick="closeLightbox()">
-    <div class="max-w-4xl max-h-[80vh] px-4 relative">
-      <button class="absolute top-[-40px] right-4 text-white hover:text-accentGold text-2xl" onclick="closeLightbox()">&times;</button>
-      <img id="lightbox-img" src="https://images.unsplash.com/photo-1518684079-2d0b9d1bf2ea?auto=format&fit=crop&w=1200&q=80" alt="Lightbox image" class="max-w-full max-h-[80vh] object-contain rounded-lg border border-borderTheme" />
-    </div>
-  </div>
-
-  <!-- Bespoke Interactive Booking Wizard Modal -->
-  <div id="booking-modal" class="fixed inset-0 bg-[#060608]/90 z-[100] backdrop-blur-md flex items-center justify-center opacity-0 pointer-events-none transition-all duration-300 px-4">
-    <div class="glass w-full max-w-2xl rounded-2xl border border-borderTheme overflow-hidden shadow-2xl relative transition-transform duration-300 scale-95" id="booking-modal-card">
-      
-      <!-- Close Button -->
-      <button onclick="closeBookingModal()" class="absolute top-4 right-4 text-textSecondary hover:text-accentGold p-2 transition-colors z-20" aria-label="Close Booking Modal">
-        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
-        </svg>
-      </button>
-
-      <!-- Modal Header -->
-      <div class="p-6 md:p-8 bg-bgSecondary/60 border-b border-borderTheme flex flex-col md:flex-row md:items-center justify-between gap-4">
-        <div>
-          <h3 class="font-editorial text-2xl md:text-3xl text-textPrimary">Bespoke Booking Wizard</h3>
-          <p class="text-[10px] text-textSecondary tracking-wide mt-1 uppercase">Reserve your private experience</p>
-        </div>
-        <!-- Progress Steps -->
-        <div class="flex items-center gap-2 text-[10px] font-bold uppercase tracking-wider text-textSecondary">
-          <span class="step-indicator active w-6 h-6 rounded-full border border-borderTheme flex items-center justify-center text-xs">1</span>
-          <span class="w-4 h-[1px] bg-borderTheme"></span>
-          <span class="step-indicator w-6 h-6 rounded-full border border-borderTheme flex items-center justify-center text-xs">2</span>
-          <span class="w-4 h-[1px] bg-borderTheme"></span>
-          <span class="step-indicator w-6 h-6 rounded-full border border-borderTheme flex items-center justify-center text-xs">3</span>
-          <span class="w-4 h-[1px] bg-borderTheme"></span>
-          <span class="step-indicator w-6 h-6 rounded-full border border-borderTheme flex items-center justify-center text-xs">4</span>
-        </div>
-      </div>
-
-      <!-- Booking Steps Form -->
-      <div class="p-6 md:p-8">
-        
-        <!-- Step 1: Select Service -->
-        <div id="step-1" class="wizard-step active space-y-4">
-          <p class="text-xs uppercase tracking-luxury text-accentGold font-semibold">Step 1: Select Service Category</p>
-          <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
-            
-            <button onclick="selectService('Hair Cut', 'Executive Haircut & Styling')" class="service-selector-btn border border-borderTheme hover:border-accentGold p-4 rounded-xl text-left bg-bgSecondary/30 hover:bg-bgSecondary/60 transition-all flex flex-col justify-between h-32 group">
-              <span class="text-xs text-textSecondary">Hair Cuts</span>
-              <div>
-                <h4 class="text-sm font-bold text-textPrimary group-hover:text-accentGold">Executive Haircut</h4>
-                <p class="text-[10px] text-accentGold mt-1">$85</p>
-              </div>
-            </button>
-
-            <button onclick="selectService('Beard Styling', 'Beard Design & Trim')" class="service-selector-btn border border-borderTheme hover:border-accentGold p-4 rounded-xl text-left bg-bgSecondary/30 hover:bg-bgSecondary/60 transition-all flex flex-col justify-between h-32 group">
-              <span class="text-xs text-textSecondary">Barbering</span>
-              <div>
-                <h4 class="text-sm font-bold text-textPrimary group-hover:text-accentGold">Beard Design</h4>
-                <p class="text-[10px] text-accentGold mt-1">$50</p>
-              </div>
-            </button>
-
-            <button onclick="selectService('Facial', 'Hydra-Facial Skin Care')" class="service-selector-btn border border-borderTheme hover:border-accentGold p-4 rounded-xl text-left bg-bgSecondary/30 hover:bg-bgSecondary/60 transition-all flex flex-col justify-between h-32 group">
-              <span class="text-xs text-textSecondary">Skincare</span>
-              <div>
-                <h4 class="text-sm font-bold text-textPrimary group-hover:text-accentGold">Hydra-Facial</h4>
-                <p class="text-[10px] text-accentGold mt-1">$95</p>
-              </div>
-            </button>
-
-          </div>
-        </div>
-
-        <!-- Step 2: Select Stylist -->
-        <div id="step-2" class="wizard-step space-y-4">
-          <p class="text-xs uppercase tracking-luxury text-accentGold font-semibold">Step 2: Select Master Stylist</p>
-          <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
-            
-            <button onclick="selectStylist('Alexander Mercer')" class="stylist-selector-btn border border-borderTheme hover:border-accentGold p-4 rounded-xl text-left bg-bgSecondary/30 hover:bg-bgSecondary/60 transition-all flex items-center gap-3">
-              <div class="w-10 h-10 rounded-full bg-accentGold/20 flex items-center justify-center font-bold text-xs text-accentGold">AL</div>
-              <div>
-                <h4 class="text-xs font-bold text-textPrimary">Alexander</h4>
-                <p class="text-[9px] text-textSecondary">Art Director</p>
-              </div>
-            </button>
-
-            <button onclick="selectStylist('Marcus Aurelius')" class="stylist-selector-btn border border-borderTheme hover:border-accentGold p-4 rounded-xl text-left bg-bgSecondary/30 hover:bg-bgSecondary/60 transition-all flex items-center gap-3">
-              <div class="w-10 h-10 rounded-full bg-accentGold/20 flex items-center justify-center font-bold text-xs text-accentGold">MA</div>
-              <div>
-                <h4 class="text-xs font-bold text-textPrimary">Marcus</h4>
-                <p class="text-[9px] text-textSecondary">Senior Groomer</p>
-              </div>
-            </button>
-
-            <button onclick="selectStylist('Sophia Loren')" class="stylist-selector-btn border border-borderTheme hover:border-accentGold p-4 rounded-xl text-left bg-bgSecondary/30 hover:bg-bgSecondary/60 transition-all flex items-center gap-3">
-              <div class="w-10 h-10 rounded-full bg-accentGold/20 flex items-center justify-center font-bold text-xs text-accentGold">SO</div>
-              <div>
-                <h4 class="text-xs font-bold text-textPrimary">Sophia</h4>
-                <p class="text-[9px] text-textSecondary">Aesthetics Specialist</p>
-              </div>
-            </button>
-
-          </div>
-          <div class="flex justify-between pt-4">
-            <button onclick="prevStep()" class="text-xs uppercase tracking-luxury text-textSecondary hover:text-textPrimary transition-colors flex items-center gap-1">
-              ← Back
-            </button>
-          </div>
-        </div>
-
-        <!-- Step 3: Select Date & Time -->
-        <div id="step-3" class="wizard-step space-y-4">
-          <p class="text-xs uppercase tracking-luxury text-accentGold font-semibold">Step 3: Choose Date & Time</p>
-          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
-            
-            <!-- Custom Date Selector Grid -->
-            <div class="space-y-2">
-              <label class="text-[9px] uppercase text-textSecondary tracking-wider font-bold">Select Date</label>
-              <div class="grid grid-cols-3 gap-2" id="date-grid-container">
-                <!-- Javascript populated dates -->
-              </div>
-            </div>
-
-            <!-- Custom Time Selector Grid -->
-            <div class="space-y-2">
-              <label class="text-[9px] uppercase text-textSecondary tracking-wider font-bold">Available Slots</label>
-              <div class="grid grid-cols-3 gap-2" id="time-grid-container">
-                <!-- Javascript populated times -->
-              </div>
-            </div>
-
-          </div>
-          <div class="flex justify-between pt-6">
-            <button onclick="prevStep()" class="text-xs uppercase tracking-luxury text-textSecondary hover:text-textPrimary transition-colors flex items-center gap-1">
-              ← Back
-            </button>
-            <button id="step-3-next-btn" disabled onclick="nextStep()" class="px-6 py-2 rounded-full border border-accentGold text-accentGold hover:bg-accentGold hover:text-black transition-all duration-300 text-xs uppercase tracking-luxury font-semibold disabled:opacity-50 disabled:pointer-events-none">
-              Continue
-            </button>
-          </div>
-        </div>
-
-        <!-- Step 4: Contact & Confirm -->
-        <div id="step-4" class="wizard-step space-y-4">
-          <p class="text-xs uppercase tracking-luxury text-accentGold font-semibold">Step 4: Contact Details</p>
-          
-          <form id="booking-details-form" onsubmit="confirmAppointment(event)" class="space-y-4">
-            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
-              
-              <div class="space-y-1">
-                <label for="book-name" class="text-[9px] uppercase tracking-wider text-textSecondary font-semibold">Full Name *</label>
-                <input required type="text" id="book-name" class="w-full bg-bgSecondary border border-borderTheme focus:border-accentGold rounded-lg px-4 py-2 text-xs text-textPrimary focus:outline-none transition-colors" placeholder="e.g. John Doe">
-              </div>
-
-              <div class="space-y-1">
-                <label for="book-email" class="text-[9px] uppercase tracking-wider text-textSecondary font-semibold">Email Address *</label>
-                <input required type="email" id="book-email" class="w-full bg-bgSecondary border border-borderTheme focus:border-accentGold rounded-lg px-4 py-2 text-xs text-textPrimary focus:outline-none transition-colors" placeholder="e.g. john@example.com">
-              </div>
-
-              <div class="space-y-1">
-                <label for="book-phone" class="text-[9px] uppercase tracking-wider text-textSecondary font-semibold">Phone Number *</label>
-                <input required type="tel" id="book-phone" class="w-full bg-bgSecondary border border-borderTheme focus:border-accentGold rounded-lg px-4 py-2 text-xs text-textPrimary focus:outline-none transition-colors" placeholder="e.g. +1 555-0199">
-              </div>
-
-              <div class="space-y-1">
-                <label for="book-notes" class="text-[9px] uppercase tracking-wider text-textSecondary font-semibold">Special Instructions</label>
-                <input type="text" id="book-notes" class="w-full bg-bgSecondary border border-borderTheme focus:border-accentGold rounded-lg px-4 py-2 text-xs text-textPrimary focus:outline-none transition-colors" placeholder="e.g. Prefer quiet service">
-              </div>
-
-            </div>
-
-            <div class="glass p-4 rounded-lg border border-borderTheme/50 space-y-2 mt-4">
-              <h5 class="text-[9px] uppercase tracking-wider text-accentGold font-bold">Summary</h5>
-              <div class="grid grid-cols-2 gap-y-1 text-[11px] text-textSecondary">
-                <span>Service:</span>
-                <span id="summary-service" class="text-textPrimary font-semibold">-</span>
-                <span>Master Stylist:</span>
-                <span id="summary-stylist" class="text-textPrimary font-semibold">-</span>
-                <span>Date & Time:</span>
-                <span id="summary-datetime" class="text-textPrimary font-semibold">-</span>
-              </div>
-            </div>
-
-            <div class="flex justify-between pt-6">
-              <button type="button" onclick="prevStep()" class="text-xs uppercase tracking-luxury text-textSecondary hover:text-textPrimary transition-colors flex items-center gap-1">
-                ← Back
-              </button>
-              <button type="submit" class="btn-gold px-8 py-3 rounded-full text-xs uppercase tracking-luxury font-bold">
-                Confirm Reservation
-              </button>
-            </div>
-
-          </form>
-        </div>
-
-        <!-- Step 5: Success Screen -->
-        <div id="step-5" class="wizard-step text-center space-y-6 py-6">
-          <div class="success-checkmark">
-            <div class="checkmark">
-              <svg class="checkmark__circle" cx="40" cy="40" r="38" fill="none">
-                <circle class="checkmark__circle" cx="40" cy="40" r="38"/>
-              </svg>
-              <path class="checkmark__check" fill="none" d="M23 40 l11 11 l24-24"/>
-            </div>
-          </div>
-
-          <div class="space-y-2">
-            <p class="text-xs uppercase tracking-superluxury text-accentGold font-semibold">Reservation Absolute</p>
-            <h3 class="font-editorial text-3xl md:text-4xl text-textPrimary">Your slot is secured.</h3>
-            <p class="text-xs text-textSecondary max-w-sm mx-auto leading-relaxed mt-2">
-              We have dispatched a luxury confirmation invite to your email. Your master stylist will be expecting you.
-            </p>
-          </div>
-
-          <div class="pt-4">
-            <button onclick="closeBookingModal()" class="px-6 py-2.5 rounded-full border border-borderTheme hover:border-accentGold text-xs uppercase tracking-luxury font-semibold text-textPrimary transition-all duration-300">
-              Return to Website
-            </button>
-          </div>
-        </div>
-
-      </div>
-
-    </div>
-  </div>
-
-  <!-- GSAP Smooth Animation Library & ScrollTrigger CDNs -->
+  <!-- GSAP Animation Library -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
 
-  <!-- Lenis Smooth Scroll Library -->
-  <script src="https://cdn.jsdelivr.net/gh/studio-freight/lenis@1.0.19/bundled/lenis.min.js"></script>
+  <!-- Swiper JS initialization -->
+  <script>
+    const testimonialSwiper = new Swiper('.testimonialSwiper', {
+      slidesPerView: 1,
+      spaceBetween: 30,
+      loop: true,
+      autoplay: {
+        delay: 5000,
+        disableOnInteraction: false
+      },
+      pagination: {
+        el: '.swiper-pagination',
+        clickable: true
+      },
+      breakpoints: {
+        768: {
+          slidesPerView: 2
+        }
+      }
+    });
+  </script>
 
   <!-- Main Application Script -->
   <script src="app.js"></script>
